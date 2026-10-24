@@ -4,13 +4,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Tema "Fresco" de Restocker.
+ * Las fuentes llegan como variables desde next/font en layout.tsx:
+ *   --font-rubik  → interfaz y números
+ *   --font-baloo  → títulos
+ */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-serif: Georgia, serif;
-  --font-heading: var(--font-geist-sans);
+  --font-heading: var(--font-baloo), var(--font-rubik), ui-sans-serif, sans-serif;
   --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
   --tracking-tight: calc(var(--tracking-normal) - 0.025em);
   --tracking-wide: calc(var(--tracking-normal) + 0.025em);
@@ -55,6 +61,22 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
+  /* Acción "Capturar": el coral se usa solo aquí, nunca como estado */
+  --color-capture: var(--capture);
+  --color-capture-foreground: var(--capture-foreground);
+
+  /* Estados de inventario: siempre acompañados de texto, nunca solo color */
+  --color-status-ok: var(--status-ok);
+  --color-status-ok-foreground: var(--status-ok-foreground);
+  --color-status-low: var(--status-low);
+  --color-status-low-foreground: var(--status-low-foreground);
+  --color-status-out: var(--status-out);
+  --color-status-out-foreground: var(--status-out-foreground);
+  --color-status-review: var(--status-review);
+  --color-status-review-foreground: var(--status-review-foreground);
+  --color-review-surface: var(--review-surface);
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -62,107 +84,149 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --radius-card: 1.5rem;
 }
 
 :root {
-  --radius: 0.5rem;
-  --background: oklch(0.9900 0 0);
-  --foreground: oklch(0 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0 0 0);
-  --popover: oklch(0.9900 0 0);
-  --popover-foreground: oklch(0 0 0);
-  --primary: oklch(0 0 0);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.9400 0 0);
-  --secondary-foreground: oklch(0 0 0);
-  --muted: oklch(0.9700 0 0);
-  --muted-foreground: oklch(0.4400 0 0);
-  --accent: oklch(0.9400 0 0);
-  --accent-foreground: oklch(0 0 0);
-  --destructive: oklch(0.6300 0.1900 23.0300);
-  --border: oklch(0.9200 0 0);
-  --input: oklch(0.9400 0 0);
-  --ring: oklch(0 0 0);
-  --chart-1: oklch(0.8100 0.1700 75.3500);
-  --chart-2: oklch(0.5500 0.2200 264.5300);
-  --chart-3: oklch(0.7200 0 0);
-  --chart-4: oklch(0.9200 0 0);
-  --chart-5: oklch(0.5600 0 0);
-  --sidebar: oklch(0.9900 0 0);
-  --sidebar-foreground: oklch(0 0 0);
-  --sidebar-primary: oklch(0 0 0);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.9400 0 0);
-  --sidebar-accent-foreground: oklch(0 0 0);
-  --sidebar-border: oklch(0.9400 0 0);
-  --sidebar-ring: oklch(0 0 0);
-  --destructive-foreground: oklch(1 0 0);
-  --shadow-color: hsl(0 0% 0%);
-  --shadow-opacity: 0.18;
+  --radius: 1rem;
+
+  /* Base */
+  --background: #f1faf6; /* menta clara */
+  --foreground: #10302b; /* bosque */
+  --card: #ffffff;
+  --card-foreground: #10302b;
+  --popover: #ffffff;
+  --popover-foreground: #10302b;
+
+  /* Marca: menta profunda */
+  --primary: #0b7a6a;
+  --primary-foreground: #ffffff;
+  --secondary: #d3f3e6;
+  --secondary-foreground: #0b5a4d;
+  --muted: #e4f3ec;
+  --muted-foreground: #4f6964;
+  --accent: #ffe3da;
+  --accent-foreground: #8a2a12;
+  --destructive: #c2362a;
+  --destructive-foreground: #ffffff;
+  --border: #cfe8de;
+  --input: #cfe8de;
+  --ring: #0b7a6a;
+
+  /* Capturar */
+  --capture: #ff8a6b;
+  --capture-foreground: #10302b;
+
+  /* Estados */
+  --status-ok: #d3f3e6;
+  --status-ok-foreground: #0b5a4d;
+  --status-low: #ffe6c7;
+  --status-low-foreground: #7a3e00;
+  --status-out: #ffdcd6;
+  --status-out-foreground: #9b1c0e;
+  --status-review: #ffe066;
+  --status-review-foreground: #10302b;
+  --review-surface: #fff7cf;
+
+  /* Gráficas: marca, coral, limón, mango, bosque suave */
+  --chart-1: #0b7a6a;
+  --chart-2: #ff8a6b;
+  --chart-3: #ffe066;
+  --chart-4: #ffb547;
+  --chart-5: #4f6964;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #10302b;
+  --sidebar-primary: #0b7a6a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d3f3e6;
+  --sidebar-accent-foreground: #0b5a4d;
+  --sidebar-border: #cfe8de;
+  --sidebar-ring: #0b7a6a;
+
+  --shadow-color: hsl(171 50% 13%);
+  --shadow-opacity: 0.1;
   --shadow-blur: 2px;
   --shadow-spread: 0px;
   --shadow-offset-x: 0px;
   --shadow-offset-y: 1px;
-  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
-  --shadow-xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
-  --shadow-sm: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 1px 2px -1px hsl(0 0% 0% / 0.18);
-  --shadow: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 1px 2px -1px hsl(0 0% 0% / 0.18);
-  --shadow-md: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 2px 4px -1px hsl(0 0% 0% / 0.18);
-  --shadow-lg: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 4px 6px -1px hsl(0 0% 0% / 0.18);
-  --shadow-xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 8px 10px -1px hsl(0 0% 0% / 0.18);
-  --shadow-2xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.45);
+  --shadow-2xs: 0px 1px 2px 0px hsl(171 50% 13% / 0.05);
+  --shadow-xs: 0px 1px 2px 0px hsl(171 50% 13% / 0.05);
+  --shadow-sm: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 1px 2px -1px hsl(171 50% 13% / 0.1);
+  --shadow: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 1px 2px -1px hsl(171 50% 13% / 0.1);
+  --shadow-md: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 2px 4px -1px hsl(171 50% 13% / 0.1);
+  --shadow-lg: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 4px 6px -1px hsl(171 50% 13% / 0.1);
+  --shadow-xl: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 8px 10px -1px hsl(171 50% 13% / 0.1);
+  --shadow-2xl: 0px 1px 2px 0px hsl(171 50% 13% / 0.25);
   --tracking-normal: 0em;
 }
 
 .dark {
-  --background: oklch(0 0 0);
-  --foreground: oklch(1 0 0);
-  --card: oklch(0.1400 0 0);
-  --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.1800 0 0);
-  --popover-foreground: oklch(1 0 0);
-  --primary: oklch(1 0 0);
-  --primary-foreground: oklch(0 0 0);
-  --secondary: oklch(0.2500 0 0);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.2300 0 0);
-  --muted-foreground: oklch(0.7200 0 0);
-  --accent: oklch(0.3200 0 0);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.6900 0.2000 23.9100);
-  --border: oklch(0.2600 0 0);
-  --input: oklch(0.3200 0 0);
-  --ring: oklch(0.7200 0 0);
-  --chart-1: oklch(0.8100 0.1700 75.3500);
-  --chart-2: oklch(0.5800 0.2100 260.8400);
-  --chart-3: oklch(0.5600 0 0);
-  --chart-4: oklch(0.4400 0 0);
-  --chart-5: oklch(0.9200 0 0);
-  --sidebar: oklch(0.1800 0 0);
-  --sidebar-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(1 0 0);
-  --sidebar-primary-foreground: oklch(0 0 0);
-  --sidebar-accent: oklch(0.3200 0 0);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.3200 0 0);
-  --sidebar-ring: oklch(0.7200 0 0);
-  --destructive-foreground: oklch(0 0 0);
-  --radius: 0.5rem;
+  /* Base: bosque profundo */
+  --background: #0c1f1c;
+  --foreground: #e6f4ee;
+  --card: #132b27;
+  --card-foreground: #e6f4ee;
+  --popover: #17322d;
+  --popover-foreground: #e6f4ee;
+
+  --primary: #3cc4a9;
+  --primary-foreground: #062b25;
+  --secondary: #12392f;
+  --secondary-foreground: #7fe0be;
+  --muted: #17322d;
+  --muted-foreground: #9db8b1;
+  --accent: #3a2219;
+  --accent-foreground: #ffb39f;
+  --destructive: #ff7a66;
+  --destructive-foreground: #1a0705;
+  --border: #23403a;
+  --input: #23403a;
+  --ring: #3cc4a9;
+
+  --capture: #ff8a6b;
+  --capture-foreground: #10302b;
+
+  --status-ok: #12392f;
+  --status-ok-foreground: #7fe0be;
+  --status-low: #3a2a12;
+  --status-low-foreground: #ffc27a;
+  --status-out: #3d1a16;
+  --status-out-foreground: #ff9c8c;
+  --status-review: #ffe066;
+  --status-review-foreground: #10302b;
+  --review-surface: #2e2a12;
+
+  --chart-1: #3cc4a9;
+  --chart-2: #ff8a6b;
+  --chart-3: #ffe066;
+  --chart-4: #ffb547;
+  --chart-5: #9db8b1;
+
+  --sidebar: #132b27;
+  --sidebar-foreground: #e6f4ee;
+  --sidebar-primary: #3cc4a9;
+  --sidebar-primary-foreground: #062b25;
+  --sidebar-accent: #12392f;
+  --sidebar-accent-foreground: #7fe0be;
+  --sidebar-border: #23403a;
+  --sidebar-ring: #3cc4a9;
+
+  --radius: 1rem;
   --shadow-color: hsl(0 0% 0%);
-  --shadow-opacity: 0.18;
+  --shadow-opacity: 0.3;
   --shadow-blur: 2px;
   --shadow-spread: 0px;
   --shadow-offset-x: 0px;
   --shadow-offset-y: 1px;
-  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
-  --shadow-xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
-  --shadow-sm: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 1px 2px -1px hsl(0 0% 0% / 0.18);
-  --shadow: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 1px 2px -1px hsl(0 0% 0% / 0.18);
-  --shadow-md: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 2px 4px -1px hsl(0 0% 0% / 0.18);
-  --shadow-lg: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 4px 6px -1px hsl(0 0% 0% / 0.18);
-  --shadow-xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 8px 10px -1px hsl(0 0% 0% / 0.18);
-  --shadow-2xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.45);
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.15);
+  --shadow-xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.15);
+  --shadow-sm: 0px 1px 2px 0px hsl(0 0% 0% / 0.3), 0px 1px 2px -1px hsl(0 0% 0% / 0.3);
+  --shadow: 0px 1px 2px 0px hsl(0 0% 0% / 0.3), 0px 1px 2px -1px hsl(0 0% 0% / 0.3);
+  --shadow-md: 0px 1px 2px 0px hsl(0 0% 0% / 0.3), 0px 2px 4px -1px hsl(0 0% 0% / 0.3);
+  --shadow-lg: 0px 1px 2px 0px hsl(0 0% 0% / 0.3), 0px 4px 6px -1px hsl(0 0% 0% / 0.3);
+  --shadow-xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.3), 0px 8px 10px -1px hsl(0 0% 0% / 0.3);
+  --shadow-2xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.6);
 }
 
 @layer base {
@@ -172,8 +236,16 @@
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
+    /* Cantidades alineadas en columnas en toda la app */
+    font-variant-numeric: tabular-nums;
   }
   html {
     @apply font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
   }
 }
