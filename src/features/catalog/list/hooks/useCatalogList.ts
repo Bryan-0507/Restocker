@@ -1,24 +1,29 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 import { toast } from "sonner";
 import { useCurrentSession } from "@/features/shared/hooks/useCurrentSession";
-import { addAlias, deactivateProduct, getCatalog, removeAlias } from "../../catalog-api";
-import { catalogListKey, inventoryListKey } from "../../shared/catalog-query-keys";
+import { queryKeys } from "@/features/shared/query-keys";
+import { addAlias, deactivateProduct, getCatalog, reactivateProduct, removeAlias } from "../../catalog-api";
 
 export function useCatalogList() {
   const queryClient = useQueryClient();
-  const { session, isAdmin } = useCurrentSession();
+  const { session } = useCurrentSession();
+  const [showInactive, setShowInactive] = useState(false);
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: catalogListKey,
-    queryFn: getCatalog,
+    // La llave empieza con queryKeys.catalog, así que invalidar el catálogo también refresca esta vista.
+    queryKey: [...queryKeys.catalog, { includeInactive: showInactive }],
+    queryFn: () => getCatalog({ includeInactive: showInactive }),
   });
 
+  // Todo cambio al catálogo aparece en el inventario y en el historial.
   async function invalidate() {
     await Promise.all([
-      queryClient.invalidateQueries({ queryKey: catalogListKey }),
-      queryClient.invalidateQueries({ queryKey: inventoryListKey }),
+      queryClient.invalidateQueries({ queryKey: queryKeys.catalog }),
+      queryClient.invalidateQueries({ queryKey: queryKeys.inventory }),
+      queryClient.invalidateQueries({ queryKey: queryKeys.history }),
     ]);
   }
 
@@ -26,7 +31,16 @@ export function useCatalogList() {
     mutationFn: deactivateProduct,
     onSuccess: async () => {
       await invalidate();
-      toast.success("Producto quitado del catálogo");
+      toast.success("Producto desactivado");
+    },
+    onError: (err) => toast.error(err.message),
+  });
+
+  const reactivateMutation = useMutation({
+    mutationFn: reactivateProduct,
+    onSuccess: async () => {
+      await invalidate();
+      toast.success("Producto reactivado");
     },
     onError: (err) => toast.error(err.message),
   });
@@ -49,9 +63,13 @@ export function useCatalogList() {
     isLoading,
     error,
     refetch,
-    canEdit: isAdmin,
+    // Cualquier miembro del negocio opera el catálogo.
+    canEdit: Boolean(session?.business),
+    showInactive,
+    setShowInactive,
     deactivateProduct: (id: string) => deactivateMutation.mutate(id),
-    isDeactivating: deactivateMutation.isPending,
+    reactivateProduct: (id: string) => reactivateMutation.mutate(id),
+    isTogglingActive: deactivateMutation.isPending || reactivateMutation.isPending,
     addAlias: (productId: string, alias: string) => addAliasMutation.mutate({ productId, alias }),
     isAddingAlias: addAliasMutation.isPending,
     removeAlias: (aliasId: string) => removeAliasMutation.mutate(aliasId),

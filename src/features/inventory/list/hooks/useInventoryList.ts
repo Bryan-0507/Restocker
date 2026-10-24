@@ -1,27 +1,25 @@
+"use client";
+
+import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { pendingCapture, products } from "@/features/shared/mock-data";
-import { stockStatus } from "@/features/shared/utils/stock-status";
+import { getInventory } from "../../inventory-api";
+import { queryKeys } from "@/features/shared/query-keys";
 
 export function useInventoryList() {
-  const items = useMemo(
-    () =>
-      products.map((product) => ({
-        ...product,
-        status: stockStatus({ quantity: product.stock, minimum: product.minimum }),
-      })),
-    [],
-  );
+  const { data, isLoading, error, refetch } = useQuery({
+    queryKey: queryKeys.inventory,
+    queryFn: getInventory,
+  });
 
-  const toBuy = useMemo(() => items.filter((item) => item.status !== "ok"), [items]);
+  const products = useMemo(() => data?.products ?? [], [data]);
+  const toRestock = useMemo(() => products.filter((product) => product.needsRestock), [products]);
 
-  const counts = useMemo(
-    () => ({
-      ok: items.filter((item) => item.status === "ok").length,
-      low: items.filter((item) => item.status === "low").length,
-      out: items.filter((item) => item.status === "out").length,
-    }),
-    [items],
-  );
-
-  return { items, toBuy, counts, pendingCapture };
+  return {
+    products,
+    stats: data?.stats,
+    toRestock,
+    isLoading,
+    error,
+    refetch,
+  };
 }

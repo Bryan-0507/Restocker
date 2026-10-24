@@ -232,6 +232,58 @@ export type Database = {
           },
         ]
       }
+      catalog_events: {
+        Row: {
+          business_id: string
+          changes: Json
+          created_at: string
+          id: string
+          performed_by: string | null
+          product_id: string
+          type: Database["public"]["Enums"]["catalog_event_type"]
+        }
+        Insert: {
+          business_id: string
+          changes?: Json
+          created_at?: string
+          id?: string
+          performed_by?: string | null
+          product_id: string
+          type: Database["public"]["Enums"]["catalog_event_type"]
+        }
+        Update: {
+          business_id?: string
+          changes?: Json
+          created_at?: string
+          id?: string
+          performed_by?: string | null
+          product_id?: string
+          type?: Database["public"]["Enums"]["catalog_event_type"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "catalog_events_business_id_fkey"
+            columns: ["business_id"]
+            isOneToOne: false
+            referencedRelation: "businesses"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "catalog_events_performed_by_fkey"
+            columns: ["performed_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "catalog_events_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       invitations: {
         Row: {
           business_id: string
@@ -495,6 +547,14 @@ export type Database = {
       }
       current_business_id: { Args: never; Returns: string }
       is_business_admin: { Args: never; Returns: boolean }
+      register_manual_movement: {
+        Args: {
+          p_product_id: string
+          p_quantity: number
+          p_type: Database["public"]["Enums"]["movement_type"]
+        }
+        Returns: string
+      }
     }
     Enums: {
       alias_origin: "manual" | "aprendido"
@@ -516,6 +576,13 @@ export type Database = {
         | "confirmada"
         | "descartada"
         | "error"
+      catalog_event_type:
+        | "producto_creado"
+        | "producto_editado"
+        | "producto_desactivado"
+        | "producto_reactivado"
+        | "alias_agregado"
+        | "alias_quitado"
       invitation_status: "pendiente" | "aceptada" | "expirada"
       movement_source: "foto" | "audio" | "texto" | "manual"
       movement_type: "entrada" | "uso" | "perdida" | "ajuste"
@@ -668,6 +735,14 @@ export const Constants = {
         "confirmada",
         "descartada",
         "error",
+      ],
+      catalog_event_type: [
+        "producto_creado",
+        "producto_editado",
+        "producto_desactivado",
+        "producto_reactivado",
+        "alias_agregado",
+        "alias_quitado",
       ],
       invitation_status: ["pendiente", "aceptada", "expirada"],
       movement_source: ["foto", "audio", "texto", "manual"],

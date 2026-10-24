@@ -15,6 +15,7 @@ export type CatalogProduct = {
   minimum: number;
   quantity: number;
   imagePath: string | null;
+  isActive: boolean;
   aliases: CatalogAlias[];
 };
 
