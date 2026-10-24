@@ -4,6 +4,7 @@ import { Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/features/shared/components/page-header";
+import { formatQuantity } from "@/features/shared/utils/units";
 import { useCatalogList } from "../hooks/useCatalogList";
 
 export function CatalogList() {
@@ -29,13 +30,13 @@ export function CatalogList() {
             <div className="flex items-baseline justify-between gap-3">
               <span className="font-heading text-lg font-bold leading-tight">{product.name}</span>
               <span className="text-xs text-muted-foreground">
-                {product.category} · {product.unit}
+                Mínimo {formatQuantity(product.minimum, product.unit)}
               </span>
             </div>
             <div className="flex flex-wrap gap-1.5">
               {product.aliases.map((alias) => (
-                <Badge key={alias} variant="secondary">
-                  {alias}
+                <Badge key={alias.id} variant="secondary">
+                  {alias.alias}
                 </Badge>
               ))}
             </div>

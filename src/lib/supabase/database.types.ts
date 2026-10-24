@@ -482,6 +482,17 @@ export type Database = {
         }
         Returns: string
       }
+      create_product: {
+        Args: {
+          p_aliases?: string[]
+          p_description?: string
+          p_initial_quantity?: number
+          p_minimum_quantity?: number
+          p_name: string
+          p_unit: Database["public"]["Enums"]["product_unit"]
+        }
+        Returns: string
+      }
       current_business_id: { Args: never; Returns: string }
       is_business_admin: { Args: never; Returns: boolean }
     }
