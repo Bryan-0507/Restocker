@@ -35,6 +35,11 @@ export async function updateSession(request: NextRequest) {
   const isSignedIn = Boolean(data?.claims);
   const { pathname } = request.nextUrl;
 
+  // Las rutas de API responden 401 en JSON en lugar de redirigir al login.
+  if (!isSignedIn && pathname.startsWith("/api/")) {
+    return NextResponse.json({ error: "Tu sesión expiró. Inicia sesión de nuevo." }, { status: 401 });
+  }
+
   if (!isSignedIn && !isPublic(pathname)) {
     return redirectTo(request, "/login", response);
   }

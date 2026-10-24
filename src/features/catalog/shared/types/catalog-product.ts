@@ -15,6 +15,8 @@ export type CatalogProduct = {
   minimum: number;
   quantity: number;
   imagePath: string | null;
+  // URL firmada (1 h) para mostrar la imagen, si tiene.
+  imageUrl: string | null;
   isActive: boolean;
   aliases: CatalogAlias[];
 };

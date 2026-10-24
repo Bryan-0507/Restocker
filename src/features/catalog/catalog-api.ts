@@ -1,4 +1,9 @@
 import type { PostgrestError } from "@supabase/supabase-js";
+import {
+  PRODUCT_IMAGES_BUCKET,
+  compressProductImage,
+  signProductImages,
+} from "@/features/shared/utils/product-images";
 import { createClient } from "@/lib/supabase/client";
 import type {
   CatalogAlias,
@@ -22,7 +27,9 @@ function toCatalogError(error: PostgrestError, fallback: string) {
 export async function getCatalog({ includeInactive = false }: { includeInactive?: boolean } = {}): Promise<
   CatalogProduct[]
 > {
-  let query = createClient()
+  const supabase = createClient();
+
+  let query = supabase
     .from("products")
     .select(
       "id, name, description, unit, minimum_quantity, current_quantity, image_path, is_active, product_aliases(id, alias, origin)",
@@ -36,6 +43,8 @@ export async function getCatalog({ includeInactive = false }: { includeInactive?
 
   if (error) throw toCatalogError(error, "No pudimos cargar tu catálogo.");
 
+  const signed = await signProductImages(supabase, data.map((product) => product.image_path));
+
   return data.map((product) => ({
     id: product.id,
     name: product.name,
@@ -44,6 +53,7 @@ export async function getCatalog({ includeInactive = false }: { includeInactive?
     minimum: Number(product.minimum_quantity),
     quantity: Number(product.current_quantity),
     imagePath: product.image_path,
+    imageUrl: product.image_path ? (signed.get(product.image_path) ?? null) : null,
     isActive: product.is_active,
     aliases: [...product.product_aliases].sort((a, b) => a.alias.localeCompare(b.alias, "es", { sensitivity: "base" })),
   }));
@@ -113,4 +123,54 @@ export async function addAlias({
 export async function removeAlias(aliasId: string) {
   const { error } = await createClient().from("product_aliases").delete().eq("id", aliasId);
   if (error) throw toCatalogError(error, "No pudimos quitar el alias.");
+}
+
+// Sube la imagen de un producto: la comprime en el navegador (WebP ~150 KB), la guarda en
+// product-images/<negocio>/<producto>/<id>.webp, actualiza image_path y borra la anterior.
+export async function uploadProductImage({
+  productId,
+  businessId,
+  file,
+}: {
+  productId: string;
+  businessId: string;
+  file: File;
+}): Promise<string> {
+  const supabase = createClient();
+  const compressed = await compressProductImage(file);
+  const path = `${businessId}/${productId}/${crypto.randomUUID()}.webp`;
+
+  const { data: current } = await supabase.from("products").select("image_path").eq("id", productId).single();
+
+  const { error: uploadError } = await supabase.storage
+    .from(PRODUCT_IMAGES_BUCKET)
+    .upload(path, compressed, { contentType: "image/webp", upsert: false });
+
+  if (uploadError) throw new Error("No pudimos subir la imagen. Intenta de nuevo.");
+
+  const { error: updateError } = await supabase.from("products").update({ image_path: path }).eq("id", productId);
+
+  if (updateError) {
+    // Sin ligarla al producto, la imagen nueva sobra.
+    await supabase.storage.from(PRODUCT_IMAGES_BUCKET).remove([path]);
+    throw toCatalogError(updateError, "No pudimos guardar la imagen del producto.");
+  }
+
+  // La anterior ya no se usa; si no se puede borrar, no afecta al producto.
+  if (current?.image_path) await supabase.storage.from(PRODUCT_IMAGES_BUCKET).remove([current.image_path]);
+
+  return path;
+}
+
+// Quita la imagen del producto y borra el archivo.
+export async function removeProductImage(productId: string) {
+  const supabase = createClient();
+
+  const { data: current } = await supabase.from("products").select("image_path").eq("id", productId).single();
+  if (!current?.image_path) return;
+
+  const { error } = await supabase.from("products").update({ image_path: null }).eq("id", productId);
+  if (error) throw toCatalogError(error, "No pudimos quitar la imagen.");
+
+  await supabase.storage.from(PRODUCT_IMAGES_BUCKET).remove([current.image_path]);
 }

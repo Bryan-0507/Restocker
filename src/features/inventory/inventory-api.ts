@@ -1,3 +1,4 @@
+import { signProductImages } from "@/features/shared/utils/product-images";
 import { stockStatus } from "@/features/shared/utils/stock-status";
 import { createClient } from "@/lib/supabase/client";
 import type {
@@ -7,8 +8,6 @@ import type {
   ManualMovementInput,
   PendingCapture,
 } from "./shared/types/inventory-data";
-
-const IMAGE_URL_TTL_SECONDS = 60 * 60;
 
 async function getProducts(): Promise<InventoryProduct[]> {
   const supabase = createClient();
@@ -22,15 +21,7 @@ async function getProducts(): Promise<InventoryProduct[]> {
   if (error) throw new Error("No pudimos cargar tu inventario.");
 
   // Las imágenes viven en un bucket privado: se firman todas en una sola llamada.
-  const paths = data.flatMap((product) => (product.image_path ? [product.image_path] : []));
-  const signed = new Map<string, string>();
-
-  if (paths.length > 0) {
-    const { data: urls } = await supabase.storage.from("product-images").createSignedUrls(paths, IMAGE_URL_TTL_SECONDS);
-    urls?.forEach((url) => {
-      if (url.path && url.signedUrl) signed.set(url.path, url.signedUrl);
-    });
-  }
+  const signed = await signProductImages(supabase, data.map((product) => product.image_path));
 
   return data.map((product) => {
     const quantity = Number(product.current_quantity);

@@ -1,0 +1,105 @@
+<!--
+  Plantilla "Confirm signup" de Supabase Auth (Restocker).
+  Asunto: Confirma tu correo para empezar con Restocker
+  Variables: .ConfirmationURL (regresa a /auth/callback), .Data.full_name (lo manda el registro).
+-->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <title>Confirma tu correo</title>
+  </head>
+  <body style="margin:0; padding:0; background-color:#f1faf6;">
+    <div style="display:none; max-height:0; overflow:hidden; opacity:0;">
+      Un toque más y configuramos tu negocio en Restocker.
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f1faf6;">
+      <tr>
+        <td align="center" style="padding:40px 16px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:520px;">
+            <!-- Marca -->
+            <tr>
+              <td style="padding:0 8px 24px 8px;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td width="40" height="40" align="center" valign="middle" style="width:40px; height:40px; background-color:#0b7a6a; border-radius:12px; font-family:'Baloo 2','Trebuchet MS',Arial,sans-serif; font-size:20px; font-weight:800; color:#ffffff;">R</td>
+                    <td style="padding-left:12px; font-family:'Baloo 2','Trebuchet MS',Arial,sans-serif; font-size:22px; font-weight:800; color:#10302b;">Restocker</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Tarjeta -->
+            <tr>
+              <td style="background-color:#ffffff; border-radius:24px; overflow:hidden;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="height:8px; background-color:#0b7a6a; line-height:8px; font-size:0;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:36px 32px 8px 32px; font-family:'Baloo 2','Trebuchet MS',Arial,sans-serif; font-size:30px; line-height:1.15; font-weight:800; color:#10302b;">
+                      Confirma tu correo
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 32px 0 32px; font-family:Rubik,'Segoe UI',Arial,sans-serif; font-size:16px; line-height:1.6; color:#4f6964;">
+                      Hola{{ if .Data.full_name }} <strong style="color:#10302b;">{{ .Data.full_name }}</strong>{{ end }}, gracias por crear tu cuenta. Confirma que este correo es tuyo y después configuramos tu negocio en un minuto.
+                    </td>
+                  </tr>
+
+                  <!-- Botón -->
+                  <tr>
+                    <td style="padding:28px 32px 8px 32px;">
+                      <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td align="center" style="background-color:#0b7a6a; border-radius:999px;">
+                            <a href="{{ .ConfirmationURL }}" target="_blank" style="display:inline-block; padding:15px 32px; font-family:Rubik,'Segoe UI',Arial,sans-serif; font-size:16px; font-weight:600; color:#ffffff; text-decoration:none; border-radius:999px;">Confirmar correo</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Lo que sigue -->
+                  <tr>
+                    <td style="padding:28px 32px 0 32px;">
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f1faf6; border-radius:16px;">
+                        <tr>
+                          <td style="padding:16px 18px; font-family:Rubik,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.7; color:#10302b;">
+                            <strong>Lo que sigue:</strong><br />
+                            1. Le pones nombre y giro a tu negocio.<br />
+                            2. Agregas tus productos.<br />
+                            3. Capturas el inventario con una foto, un audio o un mensaje.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Enlace de respaldo -->
+                  <tr>
+                    <td style="padding:28px 32px 36px 32px; font-family:Rubik,'Segoe UI',Arial,sans-serif; font-size:12px; line-height:1.6; color:#4f6964;">
+                      ¿El botón no funciona? Copia este enlace en tu navegador:<br />
+                      <a href="{{ .ConfirmationURL }}" style="color:#0b7a6a; word-break:break-all;">{{ .ConfirmationURL }}</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Pie -->
+            <tr>
+              <td style="padding:24px 8px 0 8px; font-family:Rubik,'Segoe UI',Arial,sans-serif; font-size:12px; line-height:1.6; color:#4f6964;">
+                Si no creaste una cuenta en Restocker, puedes ignorar este correo.<br />
+                Restocker · Anota como siempre, nosotros lo ordenamos.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

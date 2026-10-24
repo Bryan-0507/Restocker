@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/features/shared/theme/theme-toggle";
 import { useSettingsMenu } from "../hooks/useSettingsMenu";
 
 export function SettingsMenu() {
-  const { session, roleLabel, options, onSignOut, isSigningOut } = useSettingsMenu();
+  const { session, roleLabel, options, onSelectOption, onSignOut, isSigningOut } = useSettingsMenu();
 
   return (
     <div className="flex flex-col gap-5">
@@ -25,18 +25,22 @@ export function SettingsMenu() {
       </div>
 
       <ul className="flex flex-col gap-2">
-        {options.map(({ label, description, icon: Icon }) => (
-          <li key={label}>
-            <Button variant="ghost" className="h-auto w-full justify-start gap-3 rounded-card bg-card px-4 py-3.5 text-left">
+        {options.map((option) => (
+          <li key={option.label}>
+            <Button
+              variant="ghost"
+              onClick={() => onSelectOption(option)}
+              className="h-auto w-full justify-start gap-3 rounded-card bg-card px-4 py-3.5 text-left"
+            >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-secondary text-secondary-foreground">
-                <Icon className="size-5" aria-hidden />
+                <option.icon className="size-5" aria-hidden />
               </span>
-      
+
               <span className="flex min-w-0 flex-1 flex-col whitespace-normal">
-                <span className="text-base font-medium">{label}</span>
-                <span className="text-xs font-normal text-muted-foreground">{description}</span>
+                <span className="text-base font-medium">{option.label}</span>
+                <span className="text-xs font-normal text-muted-foreground">{option.description}</span>
               </span>
-      
+
               <ChevronRight className="size-5 text-muted-foreground" aria-hidden />
             </Button>
           </li>

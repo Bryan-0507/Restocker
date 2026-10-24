@@ -249,3 +249,19 @@
     @apply font-heading;
   }
 }
+
+/*
+ * Toasts en escritorio (≥ lg, sin barra inferior): pegados abajo y centrados sobre el
+ * contenido, no sobre la ventana. En pantallas menores el margen alto lo pone el Toaster
+ * para no tapar la barra inferior. !important porque Sonner fija estas variables inline.
+ */
+@media (min-width: 1024px) {
+  [data-sonner-toaster][data-y-position="bottom"] {
+    --offset-bottom: 1.5rem !important;
+  }
+
+  /* La sidebar mide 16rem: el centro del contenido está 8rem a la derecha. */
+  body:has([data-app-sidebar]) [data-sonner-toaster][data-x-position="center"] {
+    left: calc(50% + 8rem) !important;
+  }
+}

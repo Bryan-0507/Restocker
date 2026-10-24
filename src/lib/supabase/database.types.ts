@@ -546,6 +546,18 @@ export type Database = {
       }
     }
     Functions: {
+      business_members: {
+        Args: never
+        Returns: {
+          email: string
+          full_name: string
+          id: string
+          is_current_user: boolean
+          joined_at: string
+          last_sign_in_at: string
+          role: Database["public"]["Enums"]["user_role"]
+        }[]
+      }
       create_business: {
         Args: {
           p_category: Database["public"]["Enums"]["business_category"]
@@ -575,7 +587,15 @@ export type Database = {
         }
         Returns: string
       }
+      remove_member: { Args: { p_member_id: string }; Returns: undefined }
       revert_movement: { Args: { p_movement_id: string }; Returns: string }
+      set_member_role: {
+        Args: {
+          p_member_id: string
+          p_role: Database["public"]["Enums"]["user_role"]
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       alias_origin: "manual" | "aprendido"

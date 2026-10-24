@@ -15,7 +15,7 @@ export function AppSidebar() {
   const CaptureIcon = captureAction.icon;
 
   return (
-    <aside className="sticky top-0 hidden h-dvh w-64 shrink-0 flex-col gap-6 border-r bg-sidebar p-4 text-sidebar-foreground lg:flex">
+    <aside data-app-sidebar className="sticky top-0 hidden h-dvh w-64 shrink-0 flex-col gap-6 border-r bg-sidebar p-4 text-sidebar-foreground lg:flex">
       <Link href="/" className="flex items-center gap-3 px-2 pt-2">
         <span className="flex size-10 items-center justify-center rounded-xl bg-primary font-heading text-xl font-bold text-primary-foreground">
           R
