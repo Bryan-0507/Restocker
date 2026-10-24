@@ -523,7 +523,27 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      history_feed: {
+        Row: {
+          business_id: string | null
+          capture_item_id: string | null
+          changes: Json | null
+          created_at: string | null
+          event_type: string | null
+          id: string | null
+          kind: string | null
+          performed_by: string | null
+          performed_by_name: string | null
+          product_id: string | null
+          product_name: string | null
+          product_unit: Database["public"]["Enums"]["product_unit"] | null
+          quantity: number | null
+          reverted_by: string | null
+          reverts_movement_id: string | null
+          source: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       create_business: {
@@ -555,6 +575,7 @@ export type Database = {
         }
         Returns: string
       }
+      revert_movement: { Args: { p_movement_id: string }; Returns: string }
     }
     Enums: {
       alias_origin: "manual" | "aprendido"
