@@ -1,18 +1,17 @@
-// Datos fijos para validar el diseño del esqueleto. Se reemplazan por Supabase
-// cuando cada feature tenga su [feature]-api.ts.
-import type { Business, CurrentUser, Product } from "@/features/shared/types/inventory";
+// Datos fijos para inventario y catálogo hasta conectar su [feature]-api.ts.
+// La sesión (usuario y negocio) ya viene de Supabase.
 
-export const currentUser: CurrentUser = {
-  name: "Bryan Alberto",
-  initials: "BA",
-  role: "admin",
+export type MockProduct = {
+  id: string;
+  name: string;
+  category: string;
+  unit: string;
+  stock: number;
+  minimum: number;
+  aliases: string[];
 };
 
-export const business: Business = {
-  name: "Sakura",
-};
-
-export const products: Product[] = [
+export const products: MockProduct[] = [
   { id: "matcha", name: "Matcha", category: "Polvos", unit: "kg", stock: 0, minimum: 0.5, aliases: ["té verde"] },
   { id: "mantequilla", name: "Mantequilla", category: "Lácteos", unit: "kg", stock: 1.5, minimum: 4, aliases: ["mantequilla sin sal"] },
   { id: "harina-arroz", name: "Harina de arroz", category: "Harinas", unit: "kg", stock: 55, minimum: 10, aliases: ["harina glutinosa", "mochiko"] },

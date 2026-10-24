@@ -1,23 +1,20 @@
-export type Role = "admin" | "base";
+import type { Enums } from "@/lib/supabase/database.types";
 
-export type CurrentUser = {
-  name: string;
-  initials: string;
-  role: Role;
-};
+export type Role = Enums<"user_role">;
 
-export type Business = {
-  name: string;
-};
+export type ProductUnit = Enums<"product_unit">;
 
-export type Product = {
-  id: string;
-  name: string;
-  category: string;
-  unit: string;
-  stock: number;
-  minimum: number;
-  aliases: string[];
-};
+export type BusinessCategory = Enums<"business_category">;
+
+export type MovementType = Enums<"movement_type">;
 
 export type StockStatus = "ok" | "low" | "out";
+
+export type CurrentSession = {
+  userId: string;
+  email: string;
+  fullName: string;
+  initials: string;
+  role: Role;
+  business: { id: string; name: string } | null;
+};

@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 // Navegación de escritorio (≥ lg). En móvil se usa BottomNav.
 export function AppSidebar() {
   const pathname = usePathname();
-  const { user: currentUser, business } = useCurrentSession();
+  const { session, isAdmin } = useCurrentSession();
   const CaptureIcon = captureAction.icon;
 
   return (
@@ -22,7 +22,7 @@ export function AppSidebar() {
         </span>
         <span className="flex min-w-0 flex-col">
           <span className="font-heading text-xl font-bold leading-tight">Restocker</span>
-          <span className="truncate text-xs text-muted-foreground">{business.name}</span>
+          <span className="h-4 truncate text-xs text-muted-foreground">{session?.business?.name}</span>
         </span>
       </Link>
 
@@ -59,14 +59,16 @@ export function AppSidebar() {
 
       <div className="flex items-center gap-3 rounded-2xl bg-muted p-2 pl-3">
         <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-semibold text-secondary-foreground">
-          {currentUser.initials}
+          {session?.initials}
         </span>
+
         <div className="flex min-w-0 flex-1 flex-col">
-          <span className="truncate text-sm font-medium">{currentUser.name}</span>
-          <span className="text-xs text-muted-foreground">
-            {currentUser.role === "admin" ? "Administrador" : "Usuario"}
+          <span className="h-5 truncate text-sm font-medium">{session?.fullName}</span>
+          <span className="h-4 text-xs text-muted-foreground">
+            {session && (isAdmin ? "Administrador" : "Usuario")}
           </span>
         </div>
+
         <ThemeToggle />
       </div>
     </aside>

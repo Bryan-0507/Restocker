@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/features/shared/theme/theme-toggle";
 import { useSettingsMenu } from "../hooks/useSettingsMenu";
 
 export function SettingsMenu() {
-  const { user, roleLabel, options } = useSettingsMenu();
+  const { session, roleLabel, options, onSignOut, isSigningOut } = useSettingsMenu();
 
   return (
     <div className="flex flex-col gap-5">
@@ -15,11 +15,12 @@ export function SettingsMenu() {
 
       <div className="flex items-center gap-3 rounded-card bg-card px-4 py-3.5">
         <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-secondary font-semibold text-secondary-foreground">
-          {user.initials}
+          {session?.initials}
         </span>
+
         <div className="flex min-w-0 flex-col">
-          <span className="truncate font-heading text-lg font-bold leading-tight">{user.name}</span>
-          <span className="text-xs text-muted-foreground">{roleLabel}</span>
+          <span className="h-6 truncate font-heading text-lg font-bold leading-tight">{session?.fullName}</span>
+          <span className="h-4 text-xs text-muted-foreground">{roleLabel}</span>
         </div>
       </div>
 
@@ -52,9 +53,14 @@ export function SettingsMenu() {
           <ThemeToggle className="bg-muted" />
         </li>
         <li>
-          <Button variant="ghost" className="h-auto w-full justify-start gap-3 rounded-card px-4 py-3.5 text-base text-destructive hover:text-destructive">
+          <Button
+            variant="ghost"
+            onClick={onSignOut}
+            disabled={isSigningOut}
+            className="h-auto w-full justify-start gap-3 rounded-card px-4 py-3.5 text-base text-destructive hover:text-destructive"
+          >
             <LogOut className="size-5" aria-hidden />
-            Cerrar sesión
+            {isSigningOut ? "Cerrando sesión…" : "Cerrar sesión"}
           </Button>
         </li>
       </ul>

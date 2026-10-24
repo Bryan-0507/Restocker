@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Baloo_2, Rubik } from "next/font/google";
+import { AppProviders } from "@/features/shared/providers/app-providers";
 import { themeScript } from "@/features/shared/theme/theme-script";
 import "./globals.css";
 
@@ -28,7 +29,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AppProviders>{children}</AppProviders>
+      </body>
     </html>
   );
 }

@@ -1,7 +1,7 @@
-import type { Product, StockStatus } from "@/features/shared/types/inventory";
+import type { StockStatus } from "@/features/shared/types/inventory";
 
-export function stockStatus(product: Pick<Product, "stock" | "minimum">): StockStatus {
-  if (product.stock <= 0) return "out";
-  if (product.stock < product.minimum) return "low";
+export function stockStatus({ quantity, minimum }: { quantity: number; minimum: number }): StockStatus {
+  if (quantity <= 0) return "out";
+  if (quantity < minimum) return "low";
   return "ok";
 }

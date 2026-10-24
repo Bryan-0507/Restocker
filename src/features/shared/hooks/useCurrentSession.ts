@@ -1,10 +1,21 @@
-import { business, currentUser } from "@/features/shared/mock-data";
+"use client";
 
-// Usuario y negocio de la sesión. Hoy viene de datos fijos; después, de Supabase Auth.
+import { useQuery } from "@tanstack/react-query";
+import { getCurrentSession } from "@/features/shared/session/session-api";
+
+export const sessionQueryKey = ["session", "current"] as const;
+
 export function useCurrentSession() {
+  const { data, isLoading, error } = useQuery({
+    queryKey: sessionQueryKey,
+    queryFn: getCurrentSession,
+    staleTime: 5 * 60 * 1000,
+  });
+
   return {
-    user: currentUser,
-    business,
-    isAdmin: currentUser.role === "admin",
+    session: data,
+    isLoading,
+    error,
+    isAdmin: data?.role === "admin",
   };
 }
