@@ -3,7 +3,7 @@
 import { Camera, Trash2 } from "lucide-react";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ProductThumb } from "../../shared/components/product-thumb";
+import { ProductThumb } from "@/features/shared/components/product-thumb";
 
 // Foto opcional del producto nuevo. Solo la elige; se sube al crear el producto.
 export function NewProductImageField({

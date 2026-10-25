@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { formatQuantity } from "@/features/shared/utils/units";
 import { cn } from "@/lib/utils";
-import { ProductThumb } from "../../shared/components/product-thumb";
+import { ProductThumb } from "@/features/shared/components/product-thumb";
 import { AliasStrip } from "./alias-strip";
 import type { CatalogProduct } from "../../shared/types/catalog-product";
 

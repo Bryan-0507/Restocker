@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useIsDesktop } from "@/features/shared/hooks/useMediaQuery";
 
-// Contenedor de las hojas del catálogo: en móvil sube desde abajo, en escritorio es un panel a la derecha.
+// Hoja de un producto (catálogo, inventario): en móvil sube desde abajo, en escritorio es un panel a la derecha.
 export function ProductSheet({
   open,
   onClose,

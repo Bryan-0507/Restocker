@@ -1,16 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ShoppingCart } from "lucide-react";
+import type { ReactNode } from "react";
+import { ArrowRight, PackagePlus, RotateCw, Search, SearchX } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { PageHeader } from "@/features/shared/components/page-header";
-import { StockStatusBadge } from "@/features/shared/components/stock-status-badge";
-import { formatQuantity } from "@/features/shared/utils/units";
+import { MovementSheet } from "../../adjust/components/movement-sheet";
+import { cn } from "@/lib/utils";
 import { useInventoryList } from "../hooks/useInventoryList";
-import { SummaryTile } from "./summary-tile";
+import { InventoryListSkeleton } from "./inventory-list-skeleton";
+import { InventoryRow } from "./inventory-row";
+import { StockSummary } from "./stock-summary";
 
 export function InventoryList() {
-  const { products, stats, toRestock } = useInventoryList();
-  const pendingCapture = stats?.pendingCapture;
+  const inventory = useInventoryList();
+  const { pendingCapture, toRestock, upToDate } = inventory;
+  const hasData = !inventory.isLoading && !inventory.error && !inventory.isEmpty;
 
   return (
     <div className="flex flex-col gap-5">
@@ -23,9 +29,7 @@ export function InventoryList() {
         >
           <div className="flex flex-col">
             <span className="font-heading text-lg font-bold">Tienes una captura por revisar</span>
-            <span className="text-sm text-muted-foreground">
-              {pendingCapture.proposals} cambios sin confirmar
-            </span>
+            <span className="text-sm text-muted-foreground">{pendingCapture.proposals} cambios sin confirmar</span>
           </div>
           <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-status-review text-status-review-foreground">
             <ArrowRight className="size-5" aria-hidden />
@@ -33,43 +37,99 @@ export function InventoryList() {
         </Link>
       )}
 
-      <section aria-label="Resumen" className="grid grid-cols-3 gap-3">
-        <SummaryTile value={stats?.ok ?? 0} label="al día" className="bg-card text-status-ok-foreground" />
-        <SummaryTile value={stats?.low ?? 0} label="stock bajo" className="bg-status-low text-status-low-foreground" />
-        <SummaryTile value={stats?.out ?? 0} label="agotado" className="bg-status-out text-status-out-foreground" />
-      </section>
+      {hasData && <StockSummary out={inventory.counts.out} low={inventory.counts.low} />}
 
-      {toRestock.length > 0 && (
-        <div className="flex items-center gap-3 rounded-card bg-card p-4">
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-accent text-accent-foreground">
-            <ShoppingCart className="size-5" aria-hidden />
-          </span>
-          <p className="text-sm">
-            <span className="font-medium">Hay que comprar {toRestock.length} insumos: </span>
-            <span className="text-muted-foreground">{toRestock.map((item) => item.name).join(", ")}.</span>
-          </p>
+      {hasData && (
+        <div className="relative">
+          <Search className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-muted-foreground" aria-hidden />
+          <Input
+            type="search"
+            value={inventory.search}
+            onChange={(event) => inventory.setSearch(event.target.value)}
+            placeholder="Buscar producto"
+            aria-label="Buscar en el inventario"
+            className="h-12 rounded-full bg-card pl-12 dark:bg-card"
+          />
         </div>
       )}
 
-      <section aria-label="Productos" className="flex flex-col gap-2">
-        <div className="flex justify-between px-1 text-xs text-muted-foreground">
-          <span>Insumo</span>
-          <span>Stock / mínimo</span>
+      {inventory.isLoading && <InventoryListSkeleton />}
+
+      {inventory.error && (
+        <div role="alert" className="flex flex-col items-center gap-3 rounded-card bg-card px-6 py-10 text-center">
+          <p className="font-medium">{inventory.error.message}</p>
+          <Button variant="secondary" size="touch" onClick={() => inventory.refetch()}>
+            <RotateCw aria-hidden />
+            Reintentar
+          </Button>
         </div>
-        <ul className="grid gap-2 md:grid-cols-2">
-          {products.map((item) => (
-            <li key={item.id} className="flex items-center justify-between gap-3 rounded-card bg-card px-4 py-3.5">
-              <div className="flex min-w-0 flex-col items-start gap-1">
-                <span className="truncate font-heading text-lg font-bold leading-tight">{item.name}</span>
-                {item.status !== "ok" && <StockStatusBadge status={item.status} />}
-              </div>
-              <span className="shrink-0 font-medium">
-                {item.quantity} / {formatQuantity(item.minimum, item.unit)}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      )}
+
+      {inventory.isEmpty && (
+        <div className="flex flex-col items-center gap-4 rounded-card bg-card px-6 py-12 text-center">
+          <span className="flex size-16 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
+            <PackagePlus className="size-8" aria-hidden />
+          </span>
+          <div className="flex flex-col gap-1">
+            <p className="font-heading text-2xl font-bold">Aún no hay productos</p>
+            <p className="max-w-sm text-sm text-muted-foreground">
+              Agrega en el catálogo lo que guardas en tu negocio y aquí verás cuánto te queda.
+            </p>
+          </div>
+          <Link href="/catalogo" className={buttonVariants({ size: "touch" })}>
+            Ir al catálogo
+          </Link>
+        </div>
+      )}
+
+      {inventory.noResults && (
+        <div className="flex flex-col items-center gap-3 rounded-card bg-card px-6 py-10 text-center">
+          <SearchX className="size-8 text-muted-foreground" aria-hidden />
+          <p className="font-medium">No encontramos “{inventory.search.trim()}”.</p>
+        </div>
+      )}
+
+      {hasData && !inventory.noResults && (
+        <>
+          {toRestock.length > 0 && (
+            <InventorySection title="Hay que comprar" tone="urgent">
+              {toRestock.map((product) => (
+                <InventoryRow key={product.id} product={product} onOpen={() => inventory.openProduct(product.id)} />
+              ))}
+            </InventorySection>
+          )}
+
+          {upToDate.length > 0 && (
+            <InventorySection title="Al día">
+              {upToDate.map((product) => (
+                <InventoryRow key={product.id} product={product} onOpen={() => inventory.openProduct(product.id)} />
+              ))}
+            </InventorySection>
+          )}
+        </>
+      )}
+
+      <MovementSheet product={inventory.selectedProduct} onClose={inventory.closeProduct} />
     </div>
+  );
+}
+
+function InventorySection({
+  title,
+  tone,
+  children,
+}: {
+  title: string;
+  tone?: "urgent";
+  children: ReactNode;
+}) {
+  return (
+    <section aria-label={title} className="flex flex-col gap-2">
+      {/* Sin contador: el resumen de arriba ya da los números. */}
+      <h2 className={cn("px-1 text-sm font-medium", tone === "urgent" ? "text-status-out-foreground" : "text-muted-foreground")}>
+        {title}
+      </h2>
+      <ul className="grid gap-2 md:grid-cols-2">{children}</ul>
+    </section>
   );
 }

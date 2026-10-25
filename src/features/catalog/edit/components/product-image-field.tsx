@@ -3,7 +3,7 @@
 import { Camera, Loader2, Trash2 } from "lucide-react";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ProductThumb } from "../../shared/components/product-thumb";
+import { ProductThumb } from "@/features/shared/components/product-thumb";
 import type { CatalogProduct } from "../../shared/types/catalog-product";
 import { useProductImage } from "../hooks/useProductImage";
 
