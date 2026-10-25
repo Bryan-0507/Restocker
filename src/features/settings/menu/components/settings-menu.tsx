@@ -1,73 +1,139 @@
 "use client";
 
-import { ChevronRight, LogOut, Palette } from "lucide-react";
+import { ChevronRight, LogOut, Moon } from "lucide-react";
+import type { ReactNode } from "react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { PageHeader } from "@/features/shared/components/page-header";
-import { ThemeToggle } from "@/features/shared/theme/theme-toggle";
-import { useSettingsMenu } from "../hooks/useSettingsMenu";
+import { ThemeSwitch } from "@/features/shared/theme/theme-toggle";
+import { cn } from "@/lib/utils";
+import { type SettingsOption, useSettingsMenu } from "../hooks/useSettingsMenu";
 
 export function SettingsMenu() {
-  const { session, roleLabel, options, onSelectOption, onSignOut, isSigningOut } = useSettingsMenu();
+  const { session, roleLabel, groups, onSelectOption, onSignOut, isSigningOut } = useSettingsMenu();
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
       <PageHeader title="Ajustes" />
 
-      <div className="flex items-center gap-3 rounded-card bg-card px-4 py-3.5">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-secondary font-semibold text-secondary-foreground">
-          {session?.initials}
+      {/* Quién eres y en qué negocio: contexto antes de las opciones. */}
+      <div className="flex items-center gap-4 rounded-card bg-card p-4">
+        <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-secondary font-heading text-xl font-bold text-secondary-foreground">
+          {session?.initials ?? <Skeleton className="size-full rounded-2xl" />}
         </span>
 
-        <div className="flex min-w-0 flex-col">
-          <span className="h-6 truncate font-heading text-lg font-bold leading-tight">{session?.fullName}</span>
-          <span className="h-4 text-xs text-muted-foreground">{roleLabel}</span>
+        <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+          {session ? (
+            <>
+              <span className="truncate font-heading text-xl font-bold leading-tight">{session.fullName}</span>
+              <span className="truncate text-sm text-muted-foreground">{session.email}</span>
+              <span className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
+                <Badge variant="secondary">{roleLabel}</Badge>
+                {session.business && <span className="truncate">en {session.business.name}</span>}
+              </span>
+            </>
+          ) : (
+            <>
+              <Skeleton className="h-5 w-2/5" />
+              <Skeleton className="h-4 w-3/5" />
+            </>
+          )}
         </div>
       </div>
 
-      <ul className="flex flex-col gap-2">
-        {options.map((option) => (
-          <li key={option.label}>
-            <Button
-              variant="ghost"
-              onClick={() => onSelectOption(option)}
-              className="h-auto w-full justify-start gap-3 rounded-card bg-card px-4 py-3.5 text-left"
-            >
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-secondary text-secondary-foreground">
-                <option.icon className="size-5" aria-hidden />
-              </span>
+      {groups.map((group) => (
+        <SettingsGroup key={group.title} title={group.title}>
+          {group.options.map((option) => (
+            <SettingsRow key={option.label} option={option} onSelect={() => onSelectOption(option)} />
+          ))}
+        </SettingsGroup>
+      ))}
 
-              <span className="flex min-w-0 flex-1 flex-col whitespace-normal">
-                <span className="text-base font-medium">{option.label}</span>
-                <span className="text-xs font-normal text-muted-foreground">{option.description}</span>
-              </span>
-
-              <ChevronRight className="size-5 text-muted-foreground" aria-hidden />
-            </Button>
-          </li>
-        ))}
-    
-        <li className="flex items-center gap-3 rounded-card bg-card px-4 py-3.5">
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-secondary text-secondary-foreground">
-            <Palette className="size-5" aria-hidden />
-          </span>
-          <span className="flex min-w-0 flex-1 flex-col">
-            <span className="text-base font-medium">Apariencia</span>
-            <span className="text-xs text-muted-foreground">Modo claro u oscuro</span>
-          </span>
-          <ThemeToggle className="bg-muted" />
-        </li>
+      <SettingsGroup title="Preferencias">
         <li>
-          <Button
-            variant="ghost"
-            onClick={onSignOut}
-            disabled={isSigningOut}
-            className="h-auto w-full justify-start gap-3 rounded-card px-4 py-3.5 text-base text-destructive hover:text-destructive"
-          >
-            <LogOut className="size-5" aria-hidden />
-            {isSigningOut ? "Cerrando sesión…" : "Cerrar sesión"}
-          </Button>
+          <label htmlFor="theme-switch" className="flex cursor-pointer items-center gap-3 px-4 py-3.5">
+            <RowIcon>
+              <Moon className="size-5" aria-hidden />
+            </RowIcon>
+            <span className="flex min-w-0 flex-1 flex-col">
+              <span className="text-base font-medium">Modo oscuro</span>
+              <span className="text-xs text-muted-foreground">Se recuerda en este dispositivo</span>
+            </span>
+            <ThemeSwitch id="theme-switch" />
+          </label>
         </li>
-      </ul>
+      </SettingsGroup>
+
+      {/* Separado del resto: salir no es una opción más de la lista. */}
+      <Button
+        variant="outline"
+        size="touch"
+        onClick={onSignOut}
+        disabled={isSigningOut}
+        className="h-12 w-full border-destructive/30 bg-transparent text-destructive hover:bg-destructive/10 hover:text-destructive dark:border-destructive/40 dark:bg-transparent"
+      >
+        <LogOut aria-hidden />
+        {isSigningOut ? "Cerrando sesión…" : "Cerrar sesión"}
+      </Button>
     </div>
+  );
+}
+
+function SettingsGroup({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <section aria-label={title} className="flex flex-col gap-2">
+      <h2 className="px-1 text-sm font-medium text-muted-foreground">{title}</h2>
+      {/* Una sola tarjeta por grupo, con divisores: se lee como un bloque de opciones. */}
+      <ul className="divide-y overflow-hidden rounded-card bg-card">{children}</ul>
+    </section>
+  );
+}
+
+function RowIcon({ children, muted }: { children: ReactNode; muted?: boolean }) {
+  return (
+    <span
+      className={cn(
+        "flex size-11 shrink-0 items-center justify-center rounded-2xl",
+        muted ? "bg-muted text-muted-foreground" : "bg-secondary text-secondary-foreground",
+      )}
+    >
+      {children}
+    </span>
+  );
+}
+
+function SettingsRow({ option, onSelect }: { option: SettingsOption; onSelect: () => void }) {
+  const comingSoon = Boolean(option.comingSoon);
+
+  return (
+    <li>
+      <button
+        type="button"
+        onClick={onSelect}
+        className="group flex w-full cursor-pointer items-center gap-3 px-4 py-3.5 text-left transition-colors hover:bg-secondary/60 focus-visible:bg-secondary/60 focus-visible:outline-none"
+      >
+        <RowIcon muted={comingSoon}>
+          <option.icon className="size-5" aria-hidden />
+        </RowIcon>
+
+        <span className="flex min-w-0 flex-1 flex-col">
+          <span className={cn("text-base font-medium", comingSoon && "text-muted-foreground")}>{option.label}</span>
+          <span className="text-xs text-muted-foreground">{option.description}</span>
+        </span>
+
+        {/* "Pronto" en lugar de flecha: no promete una pantalla que todavía no existe. */}
+        {comingSoon ? (
+          <Badge variant="outline" className="shrink-0 font-normal">
+            Pronto
+          </Badge>
+        ) : (
+          <ChevronRight
+            className="size-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary motion-reduce:transition-none"
+            aria-hidden
+          />
+        )}
+      </button>
+    </li>
   );
 }

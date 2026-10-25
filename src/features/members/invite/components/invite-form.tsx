@@ -1,21 +1,25 @@
 "use client";
 
 import { Send } from "lucide-react";
-import { Controller } from "react-hook-form";
+import { Controller, useWatch } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FormField } from "@/features/shared/components/form-field";
-import { ROLE_OPTIONS } from "../../shared/role-labels";
+import { ROLE_HINT, ROLE_OPTIONS } from "../../shared/role-labels";
 import { useInviteMember } from "../hooks/useInviteMember";
 
 export function InviteForm() {
   const { form, onSubmit, isPending } = useInviteMember();
   const { errors } = form.formState;
+  const role = useWatch({ control: form.control, name: "role" });
 
   return (
     <form onSubmit={onSubmit} noValidate className="flex flex-col gap-4 rounded-card bg-card p-4">
-      <h2 className="text-xl font-bold">Invitar a alguien</h2>
+      <div className="flex flex-col gap-1">
+        <h2 className="font-heading text-xl font-bold">Invitar a alguien</h2>
+        <p className="text-sm text-muted-foreground">Le llegará un correo para crear su contraseña y unirse a tu negocio.</p>
+      </div>
 
       <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_12rem]">
         <FormField id="invite-email" label="Correo" error={errors.email?.message}>
@@ -30,7 +34,7 @@ export function InviteForm() {
           />
         </FormField>
 
-        <FormField id="invite-role" label="Rol">
+        <FormField id="invite-role" label="Rol" hint={ROLE_HINT[role]}>
           <Controller
             control={form.control}
             name="role"

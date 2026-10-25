@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { useCurrentSession } from "@/features/shared/hooks/useCurrentSession";
 import { signOut } from "@/features/shared/session/session-api";
 
-type Option = {
+export type SettingsOption = {
   label: string;
   description: string;
   icon: LucideIcon;
@@ -17,26 +17,38 @@ type Option = {
   comingSoon?: string;
 };
 
-const options: Option[] = [
+type SettingsGroup = { title: string; options: SettingsOption[] };
+
+const groups: SettingsGroup[] = [
   {
-    label: "Mi perfil",
-    description: "Nombre, correo y contraseña",
-    icon: UserRound,
-    comingSoon: "Pronto podrás cambiar tu nombre, correo y contraseña.",
+    title: "Tu cuenta",
+    options: [
+      {
+        label: "Mi perfil",
+        description: "Nombre, correo y contraseña",
+        icon: UserRound,
+        comingSoon: "Pronto podrás cambiar tu nombre, correo y contraseña.",
+      },
+    ],
   },
   {
-    label: "Miembros e invitaciones",
-    description: "Invita a tu equipo y define su rol",
-    icon: Users,
-    adminOnly: true,
-    href: "/ajustes/miembros",
-  },
-  {
-    label: "Mi negocio",
-    description: "Nombre y giro",
-    icon: Building2,
-    adminOnly: true,
-    comingSoon: "Pronto podrás editar el nombre y el giro de tu negocio.",
+    title: "Negocio",
+    options: [
+      {
+        label: "Miembros e invitaciones",
+        description: "Invita a tu equipo y define su rol",
+        icon: Users,
+        adminOnly: true,
+        href: "/ajustes/miembros",
+      },
+      {
+        label: "Mi negocio",
+        description: "Nombre y giro",
+        icon: Building2,
+        adminOnly: true,
+        comingSoon: "Pronto podrás editar el nombre y el giro de tu negocio.",
+      },
+    ],
   },
 ];
 
@@ -58,8 +70,11 @@ export function useSettingsMenu() {
   return {
     session,
     roleLabel: session ? (isAdmin ? "Administrador" : "Trabajador") : "",
-    options: options.filter((option) => !option.adminOnly || isAdmin),
-    onSelectOption: (option: Option) => {
+    // Los grupos que quedan vacíos para un trabajador no se muestran.
+    groups: groups
+      .map((group) => ({ ...group, options: group.options.filter((option) => !option.adminOnly || isAdmin) }))
+      .filter((group) => group.options.length > 0),
+    onSelectOption: (option: SettingsOption) => {
       if (option.href) router.push(option.href);
       else if (option.comingSoon) toast.info(`${option.label} está en construcción`, { description: option.comingSoon });
     },
