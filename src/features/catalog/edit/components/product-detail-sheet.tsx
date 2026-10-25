@@ -56,10 +56,19 @@ function ProductDetailForm({
           <span className="font-heading text-xl font-bold">{formatQuantity(product.quantity, product.unit)}</span>
         </div>
 
-        <Link href="/" className="flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-          Ver inventario
-          <ArrowRight className="size-4" aria-hidden />
-        </Link>
+        <div className="flex flex-col items-end gap-1">
+          <Link href="/" className="flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+            Ver inventario
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+          <Link
+            href={`/historial?producto=${product.id}`}
+            className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary hover:underline"
+          >
+            Ver historial
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        </div>
       </div>
 
       <FormField id="aliases" label="Cómo lo llaman" hint="Otros nombres con los que tu equipo se refiere a este producto.">

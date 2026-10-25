@@ -1,10 +1,12 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ProductSheet } from "@/features/shared/components/product-sheet";
 import { ProductThumb } from "@/features/shared/components/product-thumb";
 import { QuantityStepper } from "@/features/shared/components/quantity-stepper";
+import { SegmentedControl } from "@/features/shared/components/segmented-control";
 import { StockStatusBadge } from "@/features/shared/components/stock-status-badge";
 import { formatQuantity } from "@/features/shared/utils/units";
 import { cn } from "@/lib/utils";
@@ -48,29 +50,19 @@ function MovementForm({ product, onDone }: { product: InventoryProduct; onDone: 
           </span>
           <span className="text-xs text-muted-foreground">mín {formatQuantity(product.minimum, product.unit)}</span>
         </div>
-        {product.needsRestock && <StockStatusBadge status={product.status} className="shrink-0 self-start" />}
+        <div className="flex shrink-0 flex-col items-end gap-2 self-stretch justify-between">
+          {product.needsRestock ? <StockStatusBadge status={product.status} /> : <span />}
+          <Link
+            href={`/historial?producto=${product.id}`}
+            className="flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+          >
+            Historial
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        </div>
       </div>
 
-      <div role="radiogroup" aria-label="Tipo de movimiento" className="grid grid-cols-4 gap-1 rounded-full bg-card p-1">
-        {MOVEMENT_TYPES.map((option) => {
-          const selected = form.type === option.value;
-          return (
-            <button
-              key={option.value}
-              type="button"
-              role="radio"
-              aria-checked={selected}
-              onClick={() => form.setType(option.value)}
-              className={cn(
-                "h-10 cursor-pointer rounded-full text-sm font-medium transition-colors focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none",
-                selected ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary hover:text-foreground",
-              )}
-            >
-              {option.label}
-            </button>
-          );
-        })}
-      </div>
+      <SegmentedControl label="Tipo de movimiento" options={MOVEMENT_TYPES} value={form.type} onChange={form.setType} />
 
       <div className="flex flex-col gap-2">
         <label htmlFor="movement-quantity" className="text-sm font-medium">
