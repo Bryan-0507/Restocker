@@ -265,3 +265,13 @@
     left: calc(50% + 8rem) !important;
   }
 }
+
+/* Fila de alias del catálogo: va y vuelve hasta mostrar el último (--alias-shift lo mide AliasStrip). */
+@keyframes alias-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--alias-shift));
+  }
+}
