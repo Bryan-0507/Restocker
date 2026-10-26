@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Tema "Fresco" de Restocker.
+ * Tema "Pistacho" de Restocker.
  * Las fuentes llegan como variables desde next/font en layout.tsx:
  *   --font-rubik  → interfaz y números
  *   --font-baloo  → títulos
@@ -91,126 +91,126 @@
   --radius: 1rem;
 
   /* Base */
-  --background: #f1faf6; /* menta clara */
-  --foreground: #10302b; /* bosque */
+  --background: #e6f1fa; /* escarcha */
+  --foreground: #14304d; /* tinta azul */
   --card: #ffffff;
-  --card-foreground: #10302b;
+  --card-foreground: #14304d;
   --popover: #ffffff;
-  --popover-foreground: #10302b;
+  --popover-foreground: #14304d;
 
-  /* Marca: menta profunda */
-  --primary: #0b7a6a;
+  /* Marca: denim */
+  --primary: #2f6fb5;
   --primary-foreground: #ffffff;
-  --secondary: #d3f3e6;
-  --secondary-foreground: #0b5a4d;
-  --muted: #e4f3ec;
-  --muted-foreground: #4f6964;
-  --accent: #ffe3da;
-  --accent-foreground: #8a2a12;
+  --secondary: #d6e7f7;
+  --secondary-foreground: #1f4f86;
+  --muted: #dce9f5;
+  --muted-foreground: #4e6683;
+  --accent: #f2f7dc;
+  --accent-foreground: #4f5a10;
   --destructive: #c2362a;
   --destructive-foreground: #ffffff;
-  --border: #cfe8de;
-  --input: #cfe8de;
-  --ring: #0b7a6a;
+  --border: #c9dcee;
+  --input: #c9dcee;
+  --ring: #5798d7;
 
   /* Capturar */
-  --capture: #ff8a6b;
-  --capture-foreground: #10302b;
+  --capture: #d2e18a;
+  --capture-foreground: #1e2a05;
 
   /* Estados */
-  --status-ok: #d3f3e6;
-  --status-ok-foreground: #0b5a4d;
+  --status-ok: #eaf3cf;
+  --status-ok-foreground: #45520c;
   --status-low: #ffe6c7;
   --status-low-foreground: #7a3e00;
   --status-out: #ffdcd6;
   --status-out-foreground: #9b1c0e;
   --status-review: #ffe066;
-  --status-review-foreground: #10302b;
+  --status-review-foreground: #14304d;
   --review-surface: #fff7cf;
 
-  /* Gráficas: marca, coral, limón, mango, bosque suave */
-  --chart-1: #0b7a6a;
-  --chart-2: #ff8a6b;
+  /* Gráficas: denim, pistacho, limón, mango, azul suave */
+  --chart-1: #2f6fb5;
+  --chart-2: #d2e18a;
   --chart-3: #ffe066;
   --chart-4: #ffb547;
-  --chart-5: #4f6964;
+  --chart-5: #4e6683;
 
   --sidebar: #ffffff;
-  --sidebar-foreground: #10302b;
-  --sidebar-primary: #0b7a6a;
+  --sidebar-foreground: #14304d;
+  --sidebar-primary: #2f6fb5;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #d3f3e6;
-  --sidebar-accent-foreground: #0b5a4d;
-  --sidebar-border: #cfe8de;
-  --sidebar-ring: #0b7a6a;
+  --sidebar-accent: #d6e7f7;
+  --sidebar-accent-foreground: #1f4f86;
+  --sidebar-border: #c9dcee;
+  --sidebar-ring: #5798d7;
 
-  --shadow-color: hsl(171 50% 13%);
+  --shadow-color: hsl(211 59% 19%);
   --shadow-opacity: 0.1;
   --shadow-blur: 2px;
   --shadow-spread: 0px;
   --shadow-offset-x: 0px;
   --shadow-offset-y: 1px;
-  --shadow-2xs: 0px 1px 2px 0px hsl(171 50% 13% / 0.05);
-  --shadow-xs: 0px 1px 2px 0px hsl(171 50% 13% / 0.05);
-  --shadow-sm: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 1px 2px -1px hsl(171 50% 13% / 0.1);
-  --shadow: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 1px 2px -1px hsl(171 50% 13% / 0.1);
-  --shadow-md: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 2px 4px -1px hsl(171 50% 13% / 0.1);
-  --shadow-lg: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 4px 6px -1px hsl(171 50% 13% / 0.1);
-  --shadow-xl: 0px 1px 2px 0px hsl(171 50% 13% / 0.1), 0px 8px 10px -1px hsl(171 50% 13% / 0.1);
-  --shadow-2xl: 0px 1px 2px 0px hsl(171 50% 13% / 0.25);
+  --shadow-2xs: 0px 1px 2px 0px hsl(211 59% 19% / 0.05);
+  --shadow-xs: 0px 1px 2px 0px hsl(211 59% 19% / 0.05);
+  --shadow-sm: 0px 1px 2px 0px hsl(211 59% 19% / 0.1), 0px 1px 2px -1px hsl(211 59% 19% / 0.1);
+  --shadow: 0px 1px 2px 0px hsl(211 59% 19% / 0.1), 0px 1px 2px -1px hsl(211 59% 19% / 0.1);
+  --shadow-md: 0px 1px 2px 0px hsl(211 59% 19% / 0.1), 0px 2px 4px -1px hsl(211 59% 19% / 0.1);
+  --shadow-lg: 0px 1px 2px 0px hsl(211 59% 19% / 0.1), 0px 4px 6px -1px hsl(211 59% 19% / 0.1);
+  --shadow-xl: 0px 1px 2px 0px hsl(211 59% 19% / 0.1), 0px 8px 10px -1px hsl(211 59% 19% / 0.1);
+  --shadow-2xl: 0px 1px 2px 0px hsl(211 59% 19% / 0.25);
   --tracking-normal: 0em;
 }
 
 .dark {
-  /* Base: bosque profundo */
-  --background: #0c1f1c;
-  --foreground: #e6f4ee;
-  --card: #132b27;
-  --card-foreground: #e6f4ee;
-  --popover: #17322d;
-  --popover-foreground: #e6f4ee;
+  /* Base: azul noche */
+  --background: #0e1b2b;
+  --foreground: #e6f1fa;
+  --card: #15263a;
+  --card-foreground: #e6f1fa;
+  --popover: #1a2d44;
+  --popover-foreground: #e6f1fa;
 
-  --primary: #3cc4a9;
-  --primary-foreground: #062b25;
-  --secondary: #12392f;
-  --secondary-foreground: #7fe0be;
-  --muted: #17322d;
-  --muted-foreground: #9db8b1;
-  --accent: #3a2219;
-  --accent-foreground: #ffb39f;
+  --primary: #7fb2e8;
+  --primary-foreground: #0b1e33;
+  --secondary: #1c3554;
+  --secondary-foreground: #a9ccf2;
+  --muted: #1a2d44;
+  --muted-foreground: #9fb3ca;
+  --accent: #2c3314;
+  --accent-foreground: #d3db86;
   --destructive: #ff7a66;
   --destructive-foreground: #1a0705;
-  --border: #23403a;
-  --input: #23403a;
-  --ring: #3cc4a9;
+  --border: #26405d;
+  --input: #26405d;
+  --ring: #7fb2e8;
 
-  --capture: #ff8a6b;
-  --capture-foreground: #10302b;
+  --capture: #d2e18a;
+  --capture-foreground: #1e2a05;
 
-  --status-ok: #12392f;
-  --status-ok-foreground: #7fe0be;
+  --status-ok: #2a3314;
+  --status-ok-foreground: #cbd67a;
   --status-low: #3a2a12;
   --status-low-foreground: #ffc27a;
   --status-out: #3d1a16;
   --status-out-foreground: #ff9c8c;
   --status-review: #ffe066;
-  --status-review-foreground: #10302b;
+  --status-review-foreground: #14304d;
   --review-surface: #2e2a12;
 
-  --chart-1: #3cc4a9;
-  --chart-2: #ff8a6b;
+  --chart-1: #7fb2e8;
+  --chart-2: #d2e18a;
   --chart-3: #ffe066;
   --chart-4: #ffb547;
-  --chart-5: #9db8b1;
+  --chart-5: #9fb3ca;
 
-  --sidebar: #132b27;
-  --sidebar-foreground: #e6f4ee;
-  --sidebar-primary: #3cc4a9;
-  --sidebar-primary-foreground: #062b25;
-  --sidebar-accent: #12392f;
-  --sidebar-accent-foreground: #7fe0be;
-  --sidebar-border: #23403a;
-  --sidebar-ring: #3cc4a9;
+  --sidebar: #15263a;
+  --sidebar-foreground: #e6f1fa;
+  --sidebar-primary: #7fb2e8;
+  --sidebar-primary-foreground: #0b1e33;
+  --sidebar-accent: #1c3554;
+  --sidebar-accent-foreground: #a9ccf2;
+  --sidebar-border: #26405d;
+  --sidebar-ring: #7fb2e8;
 
   --radius: 1rem;
   --shadow-color: hsl(0 0% 0%);
