@@ -4,4 +4,5 @@ export const queryKeys = {
   inventory: ["inventory", "list"] as const,
   history: ["history", "list"] as const,
   members: ["members", "list"] as const,
+  capture: ["capture", "context"] as const,
 };

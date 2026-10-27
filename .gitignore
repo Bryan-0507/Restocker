@@ -42,3 +42,6 @@ yarn-error.log*
 next-env.d.ts
 
 .idea/
+
+# notas de trabajo locales (no se versionan)
+/docs/decisiones-captura.md

@@ -3,7 +3,6 @@
 import { ChevronRight, LogOut, Moon } from "lucide-react";
 import type { ReactNode } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { PageHeader } from "@/features/shared/components/page-header";
 import { ThemeSwitch } from "@/features/shared/theme/theme-toggle";
@@ -65,17 +64,17 @@ export function SettingsMenu() {
         </li>
       </SettingsGroup>
 
-      {/* Separado del resto: salir no es una opción más de la lista. */}
-      <Button
-        variant="outline"
-        size="touch"
+      {/* Separado del resto en su propia tarjeta: salir no es una opción más de la lista, pero
+          sigue la misma familia visual (tarjeta blanca) en lugar de un contorno sobre el fondo. */}
+      <button
+        type="button"
         onClick={onSignOut}
         disabled={isSigningOut}
-        className="h-12 w-full border-destructive/30 bg-transparent text-destructive hover:bg-destructive/10 hover:text-destructive dark:border-destructive/40 dark:bg-transparent"
+        className="flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-card bg-card text-base font-medium text-destructive transition-colors hover:bg-destructive/5 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-default disabled:opacity-60"
       >
-        <LogOut aria-hidden />
+        <LogOut className="size-5" aria-hidden />
         {isSigningOut ? "Cerrando sesión…" : "Cerrar sesión"}
-      </Button>
+      </button>
     </div>
   );
 }

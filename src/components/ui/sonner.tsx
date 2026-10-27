@@ -31,9 +31,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
           toast: "cn-toast gap-3 !rounded-card !border !px-4 !py-3.5 font-sans !shadow-lg",
           title: "!text-[0.95rem] !font-medium",
           description: "!text-sm !text-muted-foreground",
+          // !ml-5 y shrink-0: el texto nunca queda pegado al botón aunque ocupe dos líneas.
           actionButton:
-            "!h-9 !rounded-full !bg-primary !px-4 !text-sm !font-medium !text-primary-foreground",
-          cancelButton: "!h-9 !rounded-full !bg-muted !px-4 !text-sm !text-foreground",
+            "!ml-5 !h-9 shrink-0 !rounded-full !bg-primary !px-4 !text-sm !font-medium !text-primary-foreground",
+          cancelButton: "!ml-3 !h-9 shrink-0 !rounded-full !bg-muted !px-4 !text-sm !text-foreground",
           closeButton: "!border-border !bg-card !text-muted-foreground",
         },
       }}

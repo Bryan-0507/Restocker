@@ -2,16 +2,10 @@
 
 import { useState } from "react";
 import type { MovementType } from "@/features/shared/types/inventory";
+import { MOVEMENT_TYPES } from "@/features/shared/utils/movement-types";
 import { formatQuantity } from "@/features/shared/utils/units";
 import type { InventoryProduct } from "../../shared/types/inventory-data";
 import { useManualMovement } from "./useManualMovement";
-
-export const MOVEMENT_TYPES: { value: MovementType; label: string; question: string; action: string }[] = [
-  { value: "entrada", label: "Entrada", question: "¿Cuánto entró?", action: "Registrar entrada" },
-  { value: "uso", label: "Uso", question: "¿Cuánto se usó?", action: "Registrar uso" },
-  { value: "perdida", label: "Pérdida", question: "¿Cuánto se perdió?", action: "Registrar pérdida" },
-  { value: "ajuste", label: "Ajuste", question: "¿Cuánto hay contado?", action: "Ajustar stock" },
-];
 
 // Formulario de movimiento manual: tipo + cantidad, con el stock resultante a la vista antes de confirmar.
 // Repite las reglas de register_manual_movement para avisar antes de mandar, no en el toast.

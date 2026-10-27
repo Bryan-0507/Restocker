@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowRight, PackagePlus, RotateCw, Search, SearchX } from "lucide-react";
+import { PackagePlus, RotateCw, Search, SearchX } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { PageHeader } from "@/features/shared/components/page-header";
@@ -15,27 +15,12 @@ import { StockSummary } from "./stock-summary";
 
 export function InventoryList() {
   const inventory = useInventoryList();
-  const { pendingCapture, toRestock, upToDate } = inventory;
+  const { toRestock, upToDate } = inventory;
   const hasData = !inventory.isLoading && !inventory.error && !inventory.isEmpty;
 
   return (
     <div className="flex flex-col gap-5">
       <PageHeader title="Inventario" />
-
-      {pendingCapture && (
-        <Link
-          href="/capturar"
-          className="flex items-center justify-between gap-3 rounded-card bg-review-surface p-4 transition-opacity hover:opacity-90"
-        >
-          <div className="flex flex-col">
-            <span className="font-heading text-lg font-bold">Tienes una captura por revisar</span>
-            <span className="text-sm text-muted-foreground">{pendingCapture.proposals} cambios sin confirmar</span>
-          </div>
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-status-review text-status-review-foreground">
-            <ArrowRight className="size-5" aria-hidden />
-          </span>
-        </Link>
-      )}
 
       {hasData && <StockSummary out={inventory.counts.out} low={inventory.counts.low} />}
 

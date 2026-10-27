@@ -8,10 +8,11 @@ import { ProductThumb } from "@/features/shared/components/product-thumb";
 import { QuantityStepper } from "@/features/shared/components/quantity-stepper";
 import { SegmentedControl } from "@/features/shared/components/segmented-control";
 import { StockStatusBadge } from "@/features/shared/components/stock-status-badge";
+import { MOVEMENT_TYPES } from "@/features/shared/utils/movement-types";
 import { formatQuantity } from "@/features/shared/utils/units";
 import { cn } from "@/lib/utils";
 import type { InventoryProduct } from "../../shared/types/inventory-data";
-import { MOVEMENT_TYPES, useMovementForm } from "../hooks/useMovementForm";
+import { useMovementForm } from "../hooks/useMovementForm";
 
 export function MovementSheet({ product, onClose }: { product: InventoryProduct | null; onClose: () => void }) {
   return (
