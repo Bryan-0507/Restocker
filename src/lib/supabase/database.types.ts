@@ -44,6 +44,10 @@ export type Database = {
           created_at: string
           id: string
           is_relevant: boolean | null
+          position: number
+          rejection_category:
+            | Database["public"]["Enums"]["capture_rejection_category"]
+            | null
           rejection_reason: string | null
           storage_path: string | null
           text_content: string | null
@@ -55,6 +59,10 @@ export type Database = {
           created_at?: string
           id?: string
           is_relevant?: boolean | null
+          position?: number
+          rejection_category?:
+            | Database["public"]["Enums"]["capture_rejection_category"]
+            | null
           rejection_reason?: string | null
           storage_path?: string | null
           text_content?: string | null
@@ -66,6 +74,10 @@ export type Database = {
           created_at?: string
           id?: string
           is_relevant?: boolean | null
+          position?: number
+          rejection_category?:
+            | Database["public"]["Enums"]["capture_rejection_category"]
+            | null
           rejection_reason?: string | null
           storage_path?: string | null
           text_content?: string | null
@@ -92,11 +104,17 @@ export type Database = {
           llm_product_id: string | null
           llm_quantity: number | null
           llm_type: Database["public"]["Enums"]["movement_type"] | null
+          position: number
           product_id: string | null
+          product_mention: string | null
           quantity: number | null
+          quantity_mentioned: number | null
           raw_text: string
+          review_note: string | null
           status: Database["public"]["Enums"]["capture_item_status"]
+          suggested_product_name: string | null
           type: Database["public"]["Enums"]["movement_type"] | null
+          unit_mentioned: string | null
         }
         Insert: {
           capture_id: string
@@ -107,11 +125,17 @@ export type Database = {
           llm_product_id?: string | null
           llm_quantity?: number | null
           llm_type?: Database["public"]["Enums"]["movement_type"] | null
+          position?: number
           product_id?: string | null
+          product_mention?: string | null
           quantity?: number | null
+          quantity_mentioned?: number | null
           raw_text: string
+          review_note?: string | null
           status?: Database["public"]["Enums"]["capture_item_status"]
+          suggested_product_name?: string | null
           type?: Database["public"]["Enums"]["movement_type"] | null
+          unit_mentioned?: string | null
         }
         Update: {
           capture_id?: string
@@ -122,11 +146,17 @@ export type Database = {
           llm_product_id?: string | null
           llm_quantity?: number | null
           llm_type?: Database["public"]["Enums"]["movement_type"] | null
+          position?: number
           product_id?: string | null
+          product_mention?: string | null
           quantity?: number | null
+          quantity_mentioned?: number | null
           raw_text?: string
+          review_note?: string | null
           status?: Database["public"]["Enums"]["capture_item_status"]
+          suggested_product_name?: string | null
           type?: Database["public"]["Enums"]["movement_type"] | null
+          unit_mentioned?: string | null
         }
         Relationships: [
           {
@@ -172,6 +202,7 @@ export type Database = {
           output_tokens: number | null
           prompt_version: string | null
           raw_response: Json | null
+          rejection_message: string | null
           reviewed_at: string | null
           reviewed_by: string | null
           status: Database["public"]["Enums"]["capture_status"]
@@ -188,6 +219,7 @@ export type Database = {
           output_tokens?: number | null
           prompt_version?: string | null
           raw_response?: Json | null
+          rejection_message?: string | null
           reviewed_at?: string | null
           reviewed_by?: string | null
           status?: Database["public"]["Enums"]["capture_status"]
@@ -204,6 +236,7 @@ export type Database = {
           output_tokens?: number | null
           prompt_version?: string | null
           raw_response?: Json | null
+          rejection_message?: string | null
           reviewed_at?: string | null
           reviewed_by?: string | null
           status?: Database["public"]["Enums"]["capture_status"]
@@ -558,11 +591,32 @@ export type Database = {
           role: Database["public"]["Enums"]["user_role"]
         }[]
       }
+      confirm_capture: {
+        Args: { p_capture_id: string; p_decisions: Json }
+        Returns: number
+      }
       create_business: {
         Args: {
           p_category: Database["public"]["Enums"]["business_category"]
           p_category_other?: string
           p_name: string
+        }
+        Returns: string
+      }
+      create_capture: {
+        Args: {
+          p_capture_id: string
+          p_cost_usd: number
+          p_input_tokens: number
+          p_inputs?: Json
+          p_items?: Json
+          p_latency_ms: number
+          p_model: string
+          p_output_tokens: number
+          p_prompt_version: string
+          p_raw_response: Json
+          p_rejection_message?: string
+          p_status: Database["public"]["Enums"]["capture_status"]
         }
         Returns: string
       }
@@ -578,6 +632,7 @@ export type Database = {
         Returns: string
       }
       current_business_id: { Args: never; Returns: string }
+      discard_capture: { Args: { p_capture_id: string }; Returns: undefined }
       is_business_admin: { Args: never; Returns: boolean }
       register_manual_movement: {
         Args: {
@@ -611,11 +666,20 @@ export type Database = {
         | "otro"
       capture_input_type: "foto" | "audio" | "texto"
       capture_item_status: "pendiente" | "aceptada" | "editada" | "descartada"
+      capture_rejection_category:
+        | "sin_relacion"
+        | "sin_sentido"
+        | "ilegible"
+        | "inaudible"
+        | "consulta"
+        | "sin_movimiento"
+        | "instrucciones"
       capture_status:
         | "procesando"
         | "en_revision"
         | "confirmada"
         | "descartada"
+        | "rechazada"
         | "error"
       catalog_event_type:
         | "producto_creado"
@@ -770,11 +834,21 @@ export const Constants = {
       ],
       capture_input_type: ["foto", "audio", "texto"],
       capture_item_status: ["pendiente", "aceptada", "editada", "descartada"],
+      capture_rejection_category: [
+        "sin_relacion",
+        "sin_sentido",
+        "ilegible",
+        "inaudible",
+        "consulta",
+        "sin_movimiento",
+        "instrucciones",
+      ],
       capture_status: [
         "procesando",
         "en_revision",
         "confirmada",
         "descartada",
+        "rechazada",
         "error",
       ],
       catalog_event_type: [
