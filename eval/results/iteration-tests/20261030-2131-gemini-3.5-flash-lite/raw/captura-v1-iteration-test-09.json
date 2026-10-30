@@ -1,0 +1,67 @@
+{
+  "call": {
+    "latencyMs": 2041,
+    "inputTokens": 3034,
+    "outputTokens": 274,
+    "costUsd": 0.0015951999999999997,
+    "waits": 3,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "560dd1c4-5170-4c5b-86fa-41db157830a3",
+          "is_relevant": true,
+          "rejection_reason": null,
+          "transcription": "Se cayeron dos cheesecakes de Nutella"
+        }
+      ],
+      "items": [
+        {
+          "input_id": "560dd1c4-5170-4c5b-86fa-41db157830a3",
+          "raw_text": "Se cayeron dos cheesecakes de Nutella",
+          "product_id": "18160256-76dc-471e-9dde-07ad5e4c1fc3",
+          "suggested_product_name": null,
+          "type": "perdida",
+          "quantity": 2,
+          "unit_mentioned": "unidades",
+          "confidence": 0.95,
+          "review_note": null
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "Se cayeron dos cheesecakes de Nutella"
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "18160256-76dc-471e-9dde-07ad5e4c1fc3",
+        "suggested": null,
+        "type": "perdida",
+        "quantity": 2,
+        "confidence": 0.95,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

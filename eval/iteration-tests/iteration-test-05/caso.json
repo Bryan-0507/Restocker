@@ -1,0 +1,22 @@
+{
+  "id": "iteration-test-05",
+  "titulo": "Pregunta por existencias",
+  "prueba": "Rechazar una consulta con un mensaje en segunda persona.",
+  "version_que_lo_corrige": "captura-v5",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "cuántas ocean bomb hay?"
+    }
+  ],
+  "esperado": {
+    "status": "rechazada",
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "consulta"
+      }
+    ],
+    "nota": "Revisar a mano que el mensaje no diga \"Recibí\" ni hable en primera persona."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 2082,
+    "inputTokens": 6032,
+    "outputTokens": 122,
+    "costUsd": 0.0021146,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "6 Chocolate Ajolote Q90.00",
+          "product_mention": "Chocolate Ajolote",
+          "product_id": "p5",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 6,
+          "unit_mentioned": null,
+          "quantity": 6,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "772398c5-b6f1-4b67-b439-d64cda835650",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 6,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "call": {
+    "latencyMs": 3112,
+    "inputTokens": 6027,
+    "outputTokens": 385,
+    "costUsd": 0.0027706,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        },
+        {
+          "input_id": "e2",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Ocean Bomb quedan 5",
+          "product_mention": "Ocean Bomb",
+          "product_id": "p14",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": 5,
+          "unit_mentioned": null,
+          "quantity": 5,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e2",
+          "raw_text": "se vendió un cocopalm",
+          "product_mention": "cocopalm",
+          "product_id": "p7",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 1,
+          "unit_mentioned": null,
+          "quantity": 1,
+          "review_note": "Se interpretó la venta como uso en la operación.",
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      },
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "7c76f5c8-1e2c-4586-b65f-5d64f81c6c5f",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 5,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 1,
+        "productId": "ce5a51ea-aa88-4db9-8951-c14ef9a95b84",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 1,
+        "confidence": "alta",
+        "note": "Se interpretó la venta como uso en la operación."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

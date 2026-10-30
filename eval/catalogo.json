@@ -1,0 +1,125 @@
+{
+  "negocio": {
+    "nombre": "Sakura",
+    "giro": "Repostería"
+  },
+  "fecha": "2026-10-28",
+  "productos": [
+    {
+      "id": "b241b3b9-bd31-438e-97f9-b10255340b75",
+      "nombre": "Buldak Carbonara",
+      "unidad": "unidad",
+      "cantidad": 6,
+      "alias": []
+    },
+    {
+      "id": "3021fd2c-6f1d-421b-b3f3-28ee040eddf2",
+      "nombre": "Cheescake pistacho",
+      "unidad": "unidad",
+      "cantidad": 42,
+      "alias": [
+        "Pastel de queso de pistacho"
+      ]
+    },
+    {
+      "id": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+      "nombre": "Cheesecake Mango",
+      "unidad": "unidad",
+      "cantidad": 7,
+      "alias": [
+        "Cheesecake de mango"
+      ]
+    },
+    {
+      "id": "18160256-76dc-471e-9dde-07ad5e4c1fc3",
+      "nombre": "Cheesecake Nutella",
+      "unidad": "unidad",
+      "cantidad": 9,
+      "alias": [
+        "Cheesecake de Nutella"
+      ]
+    },
+    {
+      "id": "772398c5-b6f1-4b67-b439-d64cda835650",
+      "nombre": "Chocolate Ajolote",
+      "unidad": "unidad",
+      "cantidad": 8,
+      "alias": []
+    },
+    {
+      "id": "4f511449-7398-4bbd-bec8-d7bbbc24e761",
+      "nombre": "Chocolate Oro Dubai",
+      "unidad": "unidad",
+      "cantidad": 4,
+      "alias": []
+    },
+    {
+      "id": "ce5a51ea-aa88-4db9-8951-c14ef9a95b84",
+      "nombre": "CocoPalm Mango",
+      "unidad": "unidad",
+      "cantidad": 13,
+      "alias": []
+    },
+    {
+      "id": "2ab4befc-1553-4281-a86f-be5bdb3cd363",
+      "nombre": "Copa tres chocolates",
+      "unidad": "unidad",
+      "cantidad": 10,
+      "alias": [
+        "Copa de tres chocolates"
+      ]
+    },
+    {
+      "id": "60d5a8c5-3008-43b1-b9cc-646be3ff270e",
+      "nombre": "Mochi Arándano",
+      "unidad": "unidad",
+      "cantidad": 14,
+      "alias": [
+        "Mochi de arándano"
+      ]
+    },
+    {
+      "id": "3eb5dd3c-036a-4eaa-8308-d1c7bfc6a6c2",
+      "nombre": "Mochi Bites",
+      "unidad": "unidad",
+      "cantidad": 3,
+      "alias": [
+        "Mochi Bites 5 piezas"
+      ]
+    },
+    {
+      "id": "fa4b1629-9159-4592-9b87-9f56602bb6a8",
+      "nombre": "Mochi frutos rojos",
+      "unidad": "unidad",
+      "cantidad": 12,
+      "alias": [
+        "Mochi de frutos rojos"
+      ]
+    },
+    {
+      "id": "b9d149e9-6d92-4403-8cf1-4f6ed810d29e",
+      "nombre": "Mochi Vainilla",
+      "unidad": "unidad",
+      "cantidad": 11,
+      "alias": [
+        "Mochi de vainilla"
+      ]
+    },
+    {
+      "id": "46850e5b-1d27-426e-a042-41f62cc0c4f9",
+      "nombre": "Mochis Fresa",
+      "unidad": "unidad",
+      "cantidad": 20,
+      "alias": [
+        "Mochito Fresa"
+      ]
+    },
+    {
+      "id": "7c76f5c8-1e2c-4586-b65f-5d64f81c6c5f",
+      "nombre": "Ocean Bomb",
+      "unidad": "unidad",
+      "cantidad": 18,
+      "alias": []
+    }
+  ]
+}

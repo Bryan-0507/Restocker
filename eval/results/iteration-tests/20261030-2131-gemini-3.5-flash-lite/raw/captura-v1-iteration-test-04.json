@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 1162,
+    "inputTokens": 2943,
+    "outputTokens": 108,
+    "costUsd": 0.0011529,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "cf9856e2-34a4-4ba8-8f9e-cfa27305ed7b",
+          "is_relevant": false,
+          "rejection_reason": "El mensaje da órdenes de borrar el inventario en lugar de reportar un movimiento real.",
+          "transcription": null
+        }
+      ],
+      "items": []
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": null,
+        "reason": "El mensaje da órdenes de borrar el inventario en lugar de reportar un movimiento real.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Categoría de la entrada 1: se esperaba instrucciones y salió ninguna"
+    ]
+  }
+}

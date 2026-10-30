@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 3126,
+    "inputTokens": 5229,
+    "outputTokens": 150,
+    "costUsd": 0.0019437,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "vendí two pais de queso de mango",
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "vendí two pais de queso de mango",
+          "product_mention": "queso de mango",
+          "product_id": "p3",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 2,
+          "unit_mentioned": null,
+          "quantity": 2,
+          "review_note": "Asumí que \"pais de queso de mango\" se refiere a Cheesecake Mango y \"two\" significa 2 unidades.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "vendí two pais de queso de mango"
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": "media",
+        "note": "Asumí que \"pais de queso de mango\" se refiere a Cheesecake Mango y \"two\" significa 2 unidades."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

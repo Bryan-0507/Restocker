@@ -1,0 +1,22 @@
+{
+  "id": "iteration-test-07",
+  "titulo": "Venta",
+  "prueba": "\"Vendí\" cuenta como uso.",
+  "version_que_lo_corrige": "captura-v6",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "vendí 3 copas de tres chocolates"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Copa tres chocolates",
+        "tipo": "uso",
+        "cantidad": 3
+      }
+    ]
+  }
+}

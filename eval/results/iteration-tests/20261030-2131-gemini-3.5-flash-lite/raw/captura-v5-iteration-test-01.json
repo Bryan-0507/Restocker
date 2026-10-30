@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 1552,
+    "inputTokens": 4969,
+    "outputTokens": 224,
+    "costUsd": 0.0020507,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "todavía hay mochis de vainilla, pocos",
+          "product_mention": "mochis de vainilla",
+          "product_id": "p12",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": null,
+          "unit_mentioned": null,
+          "quantity": null,
+          "review_note": "Menciona que todavía hay pocos pero no da una cantidad exacta para el ajuste.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "b9d149e9-6d92-4403-8cf1-4f6ed810d29e",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": null,
+        "confidence": "media",
+        "note": "Menciona que todavía hay pocos pero no da una cantidad exacta para el ajuste."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

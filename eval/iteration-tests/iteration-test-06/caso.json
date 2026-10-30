@@ -1,0 +1,22 @@
+{
+  "id": "iteration-test-06",
+  "titulo": "Spanglish en voz",
+  "prueba": "\"Pie de queso\" pronunciado \"pai\" y un número en inglés.",
+  "version_que_lo_corrige": "captura-v6",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheesecake Mango",
+        "tipo": "uso",
+        "cantidad": 2
+      }
+    ]
+  }
+}

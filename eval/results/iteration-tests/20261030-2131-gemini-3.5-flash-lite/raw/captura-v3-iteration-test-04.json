@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 1668,
+    "inputTokens": 4818,
+    "outputTokens": 141,
+    "costUsd": 0.0017978999999999998,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "instrucciones",
+          "rejection_reason": "El mensaje da órdenes sobre cómo modificar el sistema en lugar de describir un movimiento real."
+        }
+      ],
+      "status": "rechazada",
+      "message": "Recibí un mensaje con órdenes para modificar el inventario, el cual no describe un movimiento real. Escribe los movimientos que ocurrieron, por ejemplo, qué productos entraron o se usaron."
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": "instrucciones",
+        "reason": "El mensaje da órdenes sobre cómo modificar el sistema en lugar de describir un movimiento real.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": "Recibí un mensaje con órdenes para modificar el inventario, el cual no describe un movimiento real. Escribe los movimientos que ocurrieron, por ejemplo, qué productos entraron o se usaron."
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": []
+  }
+}

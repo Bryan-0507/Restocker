@@ -1,0 +1,21 @@
+{
+  "id": "iteration-test-03",
+  "titulo": "Foto sin relación",
+  "prueba": "Rechazar una foto real que no es del negocio.",
+  "version_que_lo_corrige": "captura-v3",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "rechazada",
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "sin_relacion"
+      }
+    ]
+  }
+}

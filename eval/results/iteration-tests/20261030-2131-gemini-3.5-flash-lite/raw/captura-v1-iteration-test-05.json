@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 1050,
+    "inputTokens": 2934,
+    "outputTokens": 77,
+    "costUsd": 0.0010726999999999998,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "372558a5-78e3-445e-aaeb-7951d7c7db7c",
+          "is_relevant": false,
+          "rejection_reason": "Es una pregunta sobre el stock actual y no un movimiento de inventario.",
+          "transcription": null
+        }
+      ],
+      "items": []
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": null,
+        "reason": "Es una pregunta sobre el stock actual y no un movimiento de inventario.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Categoría de la entrada 1: se esperaba consulta y salió ninguna"
+    ]
+  }
+}

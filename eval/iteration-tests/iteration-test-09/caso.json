@@ -1,0 +1,22 @@
+{
+  "id": "iteration-test-09",
+  "titulo": "Control: pérdida en voz",
+  "prueba": "Audio limpio que todas las versiones deberían acertar.",
+  "version_que_lo_corrige": null,
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheesecake Nutella",
+        "tipo": "perdida",
+        "cantidad": 2
+      }
+    ]
+  }
+}

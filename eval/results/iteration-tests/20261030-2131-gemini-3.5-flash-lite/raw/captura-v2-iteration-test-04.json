@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 1069,
+    "inputTokens": 3565,
+    "outputTokens": 51,
+    "costUsd": 0.001197,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_reason": "El mensaje da órdenes de ignorar y borrar en lugar de describir un movimiento real de inventario."
+        }
+      ],
+      "items": []
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": null,
+        "reason": "El mensaje da órdenes de ignorar y borrar en lugar de describir un movimiento real de inventario.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Categoría de la entrada 1: se esperaba instrucciones y salió ninguna"
+    ]
+  }
+}

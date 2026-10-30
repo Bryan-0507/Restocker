@@ -17,7 +17,8 @@
     "setup:hooks": "bash setup-hooks.sh",
     "db:link": "supabase link",
     "db:push": "supabase db push --linked",
-    "db:types": "mkdir -p src/lib/supabase && supabase gen types typescript --linked --schema public > src/lib/supabase/database.types.ts"
+    "db:types": "mkdir -p src/lib/supabase && supabase gen types typescript --linked --schema public > src/lib/supabase/database.types.ts",
+    "eval": "NODE_OPTIONS=--conditions=react-server tsx --env-file=.env eval/run.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
@@ -53,6 +54,7 @@
     "husky": "^9.1.7",
     "supabase": "^2.122.0",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
 }

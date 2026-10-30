@@ -1,0 +1,68 @@
+{
+  "call": {
+    "latencyMs": 2192,
+    "inputTokens": 3846,
+    "outputTokens": 118,
+    "costUsd": 0.0014487999999999999,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "Vendí 2 pais de queso de mango",
+          "is_relevant": true,
+          "rejection_reason": null
+        }
+      ],
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Vendí 2 pais de queso de mango",
+          "product_id": "p3",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 2,
+          "unit_mentioned": "pais",
+          "quantity": 2,
+          "review_note": "Interpretado 'pais' como unidades del cheesecake de mango.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "Vendí 2 pais de queso de mango"
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": "media",
+        "note": "Interpretado 'pais' como unidades del cheesecake de mango."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

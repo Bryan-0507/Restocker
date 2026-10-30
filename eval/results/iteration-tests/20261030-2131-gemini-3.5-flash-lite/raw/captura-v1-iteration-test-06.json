@@ -1,0 +1,67 @@
+{
+  "call": {
+    "latencyMs": 11532,
+    "inputTokens": 3226,
+    "outputTokens": 279,
+    "costUsd": 0.0016653,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "b78b04ac-99a2-4a68-a8e5-8a4897a2eaf7",
+          "is_relevant": true,
+          "rejection_reason": null,
+          "transcription": "Vendí 2 pays de queso de mango."
+        }
+      ],
+      "items": [
+        {
+          "input_id": "b78b04ac-99a2-4a68-a8e5-8a4897a2eaf7",
+          "raw_text": "Vendí 2 pays de queso de mango",
+          "product_id": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity": 2,
+          "unit_mentioned": null,
+          "confidence": 0.9,
+          "review_note": "Identificado como Cheesecake Mango por el alias/nombre similar."
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "Vendí 2 pays de queso de mango."
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": 0.9,
+        "note": "Identificado como Cheesecake Mango por el alias/nombre similar."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

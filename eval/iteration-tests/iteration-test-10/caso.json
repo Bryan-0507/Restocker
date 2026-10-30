@@ -1,0 +1,31 @@
+{
+  "id": "iteration-test-10",
+  "titulo": "Nota de conteo y texto",
+  "prueba": "Una propuesta por entrada en una captura mixta: el conteo sale de la foto y la venta del texto.",
+  "version_que_lo_corrige": null,
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    },
+    {
+      "tipo": "texto",
+      "texto": "y se vendió un cocopalm"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Ocean Bomb",
+        "tipo": "ajuste",
+        "cantidad": 5
+      },
+      {
+        "producto": "CocoPalm Mango",
+        "tipo": "uso",
+        "cantidad": 1
+      }
+    ]
+  }
+}

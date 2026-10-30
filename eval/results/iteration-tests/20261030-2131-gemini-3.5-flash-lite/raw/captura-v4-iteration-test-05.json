@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 2947,
+    "inputTokens": 4938,
+    "outputTokens": 645,
+    "costUsd": 0.0030938999999999997,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "consulta",
+          "rejection_reason": "Es una pregunta sobre existencias; eso se ve en Inventario."
+        }
+      ],
+      "status": "rechazada",
+      "message": "Recibí una pregunta sobre existencias, que no reporta ningún movimiento. Puedes consultar lo que queda directamente en la sección de Inventario."
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": "consulta",
+        "reason": "Es una pregunta sobre existencias; eso se ve en Inventario.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": "Recibí una pregunta sobre existencias, que no reporta ningún movimiento. Puedes consultar lo que queda directamente en la sección de Inventario."
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": []
+  }
+}

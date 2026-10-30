@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 1435,
+    "inputTokens": 5094,
+    "outputTokens": 126,
+    "costUsd": 0.0018432000000000001,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "consulta",
+          "rejection_reason": "Es una pregunta sobre existencias; lo que queda se ve en Inventario."
+        }
+      ],
+      "status": "rechazada",
+      "message": "Mandaste una pregunta sobre cuántas Ocean Bomb hay, la cual no reporta ningún movimiento. Revisa las existencias directamente en Inventario."
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": "consulta",
+        "reason": "Es una pregunta sobre existencias; lo que queda se ve en Inventario.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": "Mandaste una pregunta sobre cuántas Ocean Bomb hay, la cual no reporta ningún movimiento. Revisa las existencias directamente en Inventario."
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 14925,
+    "inputTokens": 5875,
+    "outputTokens": 136,
+    "costUsd": 0.0021025,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "sin_relacion",
+          "rejection_reason": "La foto muestra un patio y un jardín, no productos de inventario ni tickets."
+        }
+      ],
+      "status": "rechazada",
+      "message": "Recibí la foto de un jardín, que no muestra productos ni un ticket de compra. Manda una foto de los productos o un ticket para registrar el inventario."
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": "sin_relacion",
+        "reason": "La foto muestra un patio y un jardín, no productos de inventario ni tickets.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": "Recibí la foto de un jardín, que no muestra productos ni un ticket de compra. Manda una foto de los productos o un ticket para registrar el inventario."
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": []
+  }
+}

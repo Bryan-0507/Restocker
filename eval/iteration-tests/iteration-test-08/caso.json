@@ -1,0 +1,22 @@
+{
+  "id": "iteration-test-08",
+  "titulo": "Control: entrada",
+  "prueba": "Caso simple que todas las versiones deberían acertar.",
+  "version_que_lo_corrige": null,
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "llegaron 10 mochis de arándano"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi Arándano",
+        "tipo": "entrada",
+        "cantidad": 10
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 1237,
+    "inputTokens": 4948,
+    "outputTokens": 132,
+    "costUsd": 0.0018143999999999999,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "instrucciones",
+          "rejection_reason": "El mensaje da órdenes sobre cómo modificar el sistema en lugar de describir un movimiento real."
+        }
+      ],
+      "status": "rechazada",
+      "message": "Recibí un mensaje con órdenes de borrar el inventario, que no describe un movimiento real. Manda la información correcta de entradas, usos o pérdidas."
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": "instrucciones",
+        "reason": "El mensaje da órdenes sobre cómo modificar el sistema en lugar de describir un movimiento real.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": "Recibí un mensaje con órdenes de borrar el inventario, que no describe un movimiento real. Manda la información correcta de entradas, usos o pérdidas."
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": []
+  }
+}

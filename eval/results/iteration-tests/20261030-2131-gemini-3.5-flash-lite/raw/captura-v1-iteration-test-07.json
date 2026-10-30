@@ -1,0 +1,67 @@
+{
+  "call": {
+    "latencyMs": 1416,
+    "inputTokens": 2938,
+    "outputTokens": 259,
+    "costUsd": 0.0015289000000000001,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "8355a368-2bb3-4157-a732-5d0f81dd5709",
+          "is_relevant": true,
+          "rejection_reason": null,
+          "transcription": null
+        }
+      ],
+      "items": [
+        {
+          "input_id": "8355a368-2bb3-4157-a732-5d0f81dd5709",
+          "raw_text": "vendí 3 copas de tres chocolates",
+          "product_id": "2ab4befc-1553-4281-a86f-be5bdb3cd363",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity": 3,
+          "unit_mentioned": "copas",
+          "confidence": 0.95,
+          "review_note": null
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "2ab4befc-1553-4281-a86f-be5bdb3cd363",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 3,
+        "confidence": 0.95,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

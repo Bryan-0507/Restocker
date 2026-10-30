@@ -1,0 +1,23 @@
+{
+  "id": "iteration-test-01",
+  "titulo": "Hay algo sin contar",
+  "prueba": "\"Todavía hay\" sin número no debe registrarse como 0.",
+  "version_que_lo_corrige": "captura-v2",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "todavía hay mochis de vainilla, pocos"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi Vainilla",
+        "tipo": "ajuste",
+        "cantidad": null
+      }
+    ],
+    "nota": "La cantidad va vacía y un aviso pide contar."
+  }
+}

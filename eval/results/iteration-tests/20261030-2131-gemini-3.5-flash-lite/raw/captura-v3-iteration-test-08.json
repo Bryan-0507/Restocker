@@ -1,0 +1,70 @@
+{
+  "call": {
+    "latencyMs": 1328,
+    "inputTokens": 4814,
+    "outputTokens": 200,
+    "costUsd": 0.0019442,
+    "waits": 2,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "llegaron 10 mochis de arándano",
+          "product_id": "p9",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 10,
+          "unit_mentioned": "mochis",
+          "quantity": 10,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "60d5a8c5-3008-43b1-b9cc-646be3ff270e",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 10,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

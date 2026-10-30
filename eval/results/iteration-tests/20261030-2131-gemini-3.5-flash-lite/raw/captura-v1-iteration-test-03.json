@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 2633,
+    "inputTokens": 3999,
+    "outputTokens": 103,
+    "costUsd": 0.0014572,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "a130776b-0dea-4a6d-af03-bf3dfd7d3881",
+          "is_relevant": false,
+          "rejection_reason": "La foto muestra una vista al jardín y no productos de inventario.",
+          "transcription": null
+        }
+      ],
+      "items": []
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": null,
+        "reason": "La foto muestra una vista al jardín y no productos de inventario.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Categoría de la entrada 1: se esperaba sin_relacion y salió ninguna"
+    ]
+  }
+}

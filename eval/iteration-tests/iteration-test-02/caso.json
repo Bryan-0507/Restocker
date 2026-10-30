@@ -1,0 +1,22 @@
+{
+  "id": "iteration-test-02",
+  "titulo": "Nota de proveedor con precios",
+  "prueba": "Tomar la cantidad y no el precio ni el total.",
+  "version_que_lo_corrige": "captura-v2",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Chocolate Ajolote",
+        "tipo": "entrada",
+        "cantidad": 6
+      }
+    ]
+  }
+}
