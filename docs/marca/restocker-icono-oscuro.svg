@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Restocker">
+  <line x1="61" y1="5" x2="61" y2="11" stroke="#5798d7" stroke-width="4" stroke-linecap="round"/>
+  <line x1="75" y1="3" x2="75" y2="9" stroke="#5798d7" stroke-width="4" stroke-linecap="round"/>
+  <rect x="14" y="58" width="32" height="32" rx="8.5" fill="#2f6fb5"/>
+  <rect x="52" y="58" width="32" height="32" rx="8.5" fill="#5798d7"/>
+  <rect x="14" y="20" width="32" height="32" rx="8.5" fill="#c9dcee"/>
+  <rect x="52" y="15" width="32" height="32" rx="8.5" fill="#d2e18a" transform="rotate(10 68 31)"/>
+</svg>

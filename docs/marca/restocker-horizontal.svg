@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-label="Restocker">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&amp;display=swap");
+    .marca { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 104px; letter-spacing: -1px; fill: #14304d; }
+  </style>
+  <g transform="translate(0 10)">
+    <line x1="61" y1="5" x2="61" y2="11" stroke="#a9ccf2" stroke-width="4" stroke-linecap="round"/>
+    <line x1="75" y1="3" x2="75" y2="9" stroke="#a9ccf2" stroke-width="4" stroke-linecap="round"/>
+    <rect x="14" y="58" width="32" height="32" rx="8.5" fill="#14304d"/>
+    <rect x="52" y="58" width="32" height="32" rx="8.5" fill="#2f6fb5"/>
+    <rect x="14" y="20" width="32" height="32" rx="8.5" fill="#5798d7"/>
+    <rect x="52" y="15" width="32" height="32" rx="8.5" fill="#d2e18a" transform="rotate(10 68 31)"/>
+  </g>
+  <text class="marca" x="110" y="96">restocker</text>
+</svg>
