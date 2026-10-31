@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 1366,
+    "inputTokens": 5094,
+    "outputTokens": 136,
+    "costUsd": 0.0018682,
+    "waits": 2,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "vendí 2 mochis",
+          "product_mention": "mochis",
+          "product_id": null,
+          "suggested_product_name": "Mochi",
+          "type": "uso",
+          "quantity_mentioned": 2,
+          "unit_mentioned": null,
+          "quantity": 2,
+          "review_note": "Hay varios tipos de mochis en el catálogo, especifica cuál se vendió para asignarlo correctamente.",
+          "confidence": "baja"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": null,
+        "suggested": "Mochi",
+        "type": "uso",
+        "quantity": 2,
+        "confidence": "baja",
+        "note": "Hay varios tipos de mochis en el catálogo, especifica cuál se vendió para asignarlo correctamente."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

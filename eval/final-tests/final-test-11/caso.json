@@ -1,0 +1,23 @@
+{
+  "id": "final-test-11",
+  "codigo": "A01",
+  "titulo": "Audio limpio, un producto",
+  "responsable": "Bryan",
+  "prueba": "El caso base en voz.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Copa tres chocolates",
+        "tipo": "uso",
+        "cantidad": 4
+      }
+    ]
+  }
+}

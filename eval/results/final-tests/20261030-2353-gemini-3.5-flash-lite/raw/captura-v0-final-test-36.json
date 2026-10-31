@@ -1,0 +1,67 @@
+{
+  "call": {
+    "latencyMs": 1167,
+    "inputTokens": 1246,
+    "outputTokens": 100,
+    "costUsd": 0.0006238,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p1",
+          "type": "entrada",
+          "quantity": 10
+        },
+        {
+          "input_id": "e1",
+          "product_id": "p14",
+          "type": "entrada",
+          "quantity": 1
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "b241b3b9-bd31-438e-97f9-b10255340b75",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 10,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "7c76f5c8-1e2c-4586-b65f-5d64f81c6c5f",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 1,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": false,
+    "categoriesOk": 0,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 2,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Estado: se esperaba rechazada y salió aceptada",
+      "Categoría de la entrada 1: se esperaba ilegible y salió ninguna",
+      "Sobró: Buldak Carbonara, entrada, 10",
+      "Sobró: Ocean Bomb, entrada, 1"
+    ]
+  }
+}

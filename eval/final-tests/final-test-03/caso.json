@@ -1,0 +1,23 @@
+{
+  "id": "final-test-03",
+  "codigo": "T03",
+  "titulo": "Pérdida",
+  "responsable": "Bryan",
+  "prueba": "Que distinga una pérdida de un uso.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "se cayeron 2 copas de tres chocolates al sacarlas de la refri"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Copa tres chocolates",
+        "tipo": "perdida",
+        "cantidad": 2
+      }
+    ]
+  }
+}

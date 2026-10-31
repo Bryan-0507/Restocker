@@ -1,0 +1,23 @@
+{
+  "id": "final-test-09",
+  "codigo": "T09",
+  "titulo": "Se acabó un producto",
+  "responsable": "Adriana",
+  "prueba": "\"Ya no hay\" como ajuste a 0 sin que se diga un número.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "ya no hay oro dubai, se acabaron todos"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Chocolate Oro Dubai",
+        "tipo": "ajuste",
+        "cantidad": 0
+      }
+    ]
+  }
+}

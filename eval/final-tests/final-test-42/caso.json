@@ -1,0 +1,42 @@
+{
+  "id": "final-test-42",
+  "codigo": "M06",
+  "titulo": "Nota de proveedor en dos fotos",
+  "responsable": "Adriana",
+  "prueba": "Unir una nota partida en dos fotos sin repetir líneas.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    },
+    {
+      "tipo": "foto",
+      "archivo": "foto2.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Ocean Bomb",
+        "tipo": "entrada",
+        "cantidad": 12
+      },
+      {
+        "producto": "CocoPalm Mango",
+        "tipo": "entrada",
+        "cantidad": 6
+      },
+      {
+        "producto": "Buldak Carbonara",
+        "tipo": "entrada",
+        "cantidad": 10
+      },
+      {
+        "producto": "Mochi Bites",
+        "tipo": "entrada",
+        "cantidad": 4
+      }
+    ]
+  }
+}

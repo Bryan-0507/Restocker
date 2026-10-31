@@ -1,0 +1,33 @@
+{
+  "id": "final-test-13",
+  "codigo": "A03",
+  "titulo": "Audio limpio, conteo",
+  "responsable": "Bryan",
+  "prueba": "Tres ajustes seguidos, con productos nombrados por elipsis.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi frutos rojos",
+        "tipo": "ajuste",
+        "cantidad": 10
+      },
+      {
+        "producto": "Mochi Vainilla",
+        "tipo": "ajuste",
+        "cantidad": 12
+      },
+      {
+        "producto": "Mochi Arándano",
+        "tipo": "ajuste",
+        "cantidad": 9
+      }
+    ]
+  }
+}

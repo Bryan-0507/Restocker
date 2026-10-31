@@ -1,0 +1,22 @@
+{
+  "id": "final-test-47",
+  "codigo": "R03",
+  "titulo": "Producto sin movimiento",
+  "responsable": "Bryan",
+  "prueba": "Rechazo cuando se nombra un producto pero no qué pasó.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "mochis de fresa"
+    }
+  ],
+  "esperado": {
+    "status": "rechazada",
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "sin_movimiento"
+      }
+    ]
+  }
+}

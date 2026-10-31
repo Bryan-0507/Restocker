@@ -1,0 +1,28 @@
+{
+  "id": "final-test-05",
+  "codigo": "T05",
+  "titulo": "Faltas y abreviaturas",
+  "responsable": "Bryan",
+  "prueba": "Ortografía mala y abreviaturas contra el nombre mal escrito del catálogo (\"Cheescake pistacho\").",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "bendi 2 chesecake pistacho y 1 mochi arandano xfa anotalo"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheescake pistacho",
+        "tipo": "uso",
+        "cantidad": 2
+      },
+      {
+        "producto": "Mochi Arándano",
+        "tipo": "uso",
+        "cantidad": 1
+      }
+    ]
+  }
+}

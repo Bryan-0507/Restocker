@@ -1,0 +1,95 @@
+{
+  "call": {
+    "latencyMs": 2050,
+    "inputTokens": 6161,
+    "outputTokens": 206,
+    "costUsd": 0.0023633,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "29 Buldak Carbonara Q480.00",
+          "product_mention": "Buldak Carbonara",
+          "product_id": "p1",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 29,
+          "unit_mentioned": null,
+          "quantity": 29,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "12 Ocean Bomb Q144.00",
+          "product_mention": "Ocean Bomb",
+          "product_id": "p14",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 12,
+          "unit_mentioned": null,
+          "quantity": 12,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "b241b3b9-bd31-438e-97f9-b10255340b75",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 29,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "7c76f5c8-1e2c-4586-b65f-5d64f81c6c5f",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 12,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 1,
+    "failures": [
+      "Cantidad de Buldak Carbonara: se esperaba 24 y salió 29"
+    ]
+  }
+}

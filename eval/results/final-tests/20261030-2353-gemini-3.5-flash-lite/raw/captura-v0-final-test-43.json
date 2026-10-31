@@ -1,0 +1,77 @@
+{
+  "call": {
+    "latencyMs": 2411,
+    "inputTokens": 1322,
+    "outputTokens": 95,
+    "costUsd": 0.0006341,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p8",
+          "type": "uso",
+          "quantity": 2
+        },
+        {
+          "input_id": "e2",
+          "product_id": "p3",
+          "type": "entrada",
+          "quantity": 10
+        },
+        {
+          "input_id": "e3",
+          "product_id": "p5",
+          "type": "perdida",
+          "quantity": 1
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "2ab4befc-1553-4281-a86f-be5bdb3cd363",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 1,
+        "productId": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 10,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 2,
+        "productId": "772398c5-b6f1-4b67-b439-d64cda835650",
+        "suggested": null,
+        "type": "perdida",
+        "quantity": 1,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 3,
+    "predictedItems": 3,
+    "matched": 3,
+    "perfect": 3,
+    "failures": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "final-test-29",
+  "codigo": "F06",
+  "titulo": "Conteo en lista con viñetas",
+  "responsable": "Adriana",
+  "prueba": "Ajustes a partir de una lista de conteo escrita con viñetas.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheesecake Mango",
+        "tipo": "ajuste",
+        "cantidad": 4
+      },
+      {
+        "producto": "Cheesecake Nutella",
+        "tipo": "ajuste",
+        "cantidad": 3
+      }
+    ]
+  }
+}

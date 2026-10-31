@@ -1,0 +1,93 @@
+{
+  "call": {
+    "latencyMs": 1380,
+    "inputTokens": 5103,
+    "outputTokens": 203,
+    "costUsd": 0.0020383999999999997,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "se vendieron 4 pies de queso de mango",
+          "product_mention": "pies de queso de mango",
+          "product_id": "p3",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 4,
+          "unit_mentioned": null,
+          "quantity": 4,
+          "review_note": "Identificado como Cheesecake Mango por traducción de pie de queso.",
+          "confidence": "media"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "two cocopalm",
+          "product_mention": "cocopalm",
+          "product_id": "p7",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 2,
+          "unit_mentioned": null,
+          "quantity": 2,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 4,
+        "confidence": "media",
+        "note": "Identificado como Cheesecake Mango por traducción de pie de queso."
+      },
+      {
+        "inputIndex": 0,
+        "productId": "ce5a51ea-aa88-4db9-8951-c14ef9a95b84",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

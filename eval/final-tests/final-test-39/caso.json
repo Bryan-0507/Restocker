@@ -1,0 +1,28 @@
+{
+  "id": "final-test-39",
+  "codigo": "M03",
+  "titulo": "Texto que corrige la foto",
+  "responsable": "Bryan",
+  "prueba": "Que el texto que corrige pese más que la foto.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    },
+    {
+      "tipo": "texto",
+      "texto": "perdón eran 4 no 5"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheescake pistacho",
+        "tipo": "uso",
+        "cantidad": 4
+      }
+    ],
+    "nota": "Una sola propuesta."
+  }
+}

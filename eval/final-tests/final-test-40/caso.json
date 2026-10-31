@@ -1,0 +1,33 @@
+{
+  "id": "final-test-40",
+  "codigo": "M04",
+  "titulo": "Audio útil y foto sin relación",
+  "responsable": "Bryan",
+  "prueba": "Aceptar lo útil y marcar lo que no sirve.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    },
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "CocoPalm Mango",
+        "tipo": "uso",
+        "cantidad": 3
+      }
+    ],
+    "rechazos": [
+      {
+        "entrada": 2,
+        "categoria": "sin_relacion"
+      }
+    ]
+  }
+}

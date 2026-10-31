@@ -1,0 +1,28 @@
+{
+  "id": "final-test-15",
+  "codigo": "A05",
+  "titulo": "Muletillas y habla natural",
+  "responsable": "Bryan",
+  "prueba": "Habla relajada con muletillas y \"un cocopalm\" como cantidad.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Ocean Bomb",
+        "tipo": "uso",
+        "cantidad": 2
+      },
+      {
+        "producto": "CocoPalm Mango",
+        "tipo": "uso",
+        "cantidad": 1
+      }
+    ]
+  }
+}

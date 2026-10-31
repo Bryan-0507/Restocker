@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 3609,
+    "inputTokens": 5274,
+    "outputTokens": 236,
+    "costUsd": 0.0021722,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "Entraron 15 Ocean Bomb de uva",
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Entraron 15 Ocean Bomb de uva",
+          "product_mention": "Ocean Bomb",
+          "product_id": "p14",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 15,
+          "unit_mentioned": null,
+          "quantity": 15,
+          "review_note": "El audio menciona sabor uva, pero en el catálogo solo existe Ocean Bomb genérico.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "Entraron 15 Ocean Bomb de uva"
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "7c76f5c8-1e2c-4586-b65f-5d64f81c6c5f",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 15,
+        "confidence": "media",
+        "note": "El audio menciona sabor uva, pero en el catálogo solo existe Ocean Bomb genérico."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

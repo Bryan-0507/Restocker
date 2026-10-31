@@ -1,0 +1,106 @@
+{
+  "call": {
+    "latencyMs": 2384,
+    "inputTokens": 6218,
+    "outputTokens": 377,
+    "costUsd": 0.0028078999999999995,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        },
+        {
+          "input_id": "e2",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Conteo: Copa tres chocolates 4",
+          "product_mention": "Copa tres chocolates",
+          "product_id": "p8",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": 4,
+          "unit_mentioned": null,
+          "quantity": 4,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e2",
+          "raw_text": "vendí 2 buldak",
+          "product_mention": "buldak",
+          "product_id": "p1",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 2,
+          "unit_mentioned": null,
+          "quantity": 2,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      },
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "2ab4befc-1553-4281-a86f-be5bdb3cd363",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 4,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 1,
+        "productId": "b241b3b9-bd31-438e-97f9-b10255340b75",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

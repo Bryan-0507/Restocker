@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 1949,
+    "inputTokens": 6161,
+    "outputTokens": 243,
+    "costUsd": 0.0024558,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Mochi bites 5pzs x 4 Q190.00",
+          "product_mention": "Mochi bites",
+          "product_id": "p10",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 4,
+          "unit_mentioned": "pzs",
+          "quantity": 4,
+          "review_note": "Se tomó la cantidad de 4 unidades de la línea del ticket (ignorando el precio de Q190.00).",
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "3eb5dd3c-036a-4eaa-8308-d1c7bfc6a6c2",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 4,
+        "confidence": "alta",
+        "note": "Se tomó la cantidad de 4 unidades de la línea del ticket (ignorando el precio de Q190.00)."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

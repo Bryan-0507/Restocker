@@ -1,0 +1,22 @@
+{
+  "id": "final-test-45",
+  "codigo": "R01",
+  "titulo": "Teclazos",
+  "responsable": "Bryan",
+  "prueba": "Rechazo por sin sentido.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "asdfgh kkkk"
+    }
+  ],
+  "esperado": {
+    "status": "rechazada",
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "sin_sentido"
+      }
+    ]
+  }
+}

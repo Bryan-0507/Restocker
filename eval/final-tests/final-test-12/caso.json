@@ -1,0 +1,33 @@
+{
+  "id": "final-test-12",
+  "codigo": "A02",
+  "titulo": "Audio limpio, tres tipos de movimiento",
+  "responsable": "Bryan",
+  "prueba": "Entrada, uso y pérdida en una sola nota de voz.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochis Fresa",
+        "tipo": "entrada",
+        "cantidad": 20
+      },
+      {
+        "producto": "Cheesecake Nutella",
+        "tipo": "uso",
+        "cantidad": 3
+      },
+      {
+        "producto": "Cheesecake Mango",
+        "tipo": "perdida",
+        "cantidad": 1
+      }
+    ]
+  }
+}

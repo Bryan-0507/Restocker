@@ -1,0 +1,49 @@
+{
+  "call": {
+    "latencyMs": 3556,
+    "inputTokens": 1230,
+    "outputTokens": 56,
+    "costUsd": 0.000509,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p10",
+          "type": "entrada",
+          "quantity": 5
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "3eb5dd3c-036a-4eaa-8308-d1c7bfc6a6c2",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 5,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 0,
+    "failures": [
+      "Cantidad de Mochi Bites: se esperaba 4 y salió 5"
+    ]
+  }
+}

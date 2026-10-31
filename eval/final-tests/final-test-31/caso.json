@@ -1,0 +1,32 @@
+{
+  "id": "final-test-31",
+  "codigo": "F08",
+  "titulo": "Palabra que no se lee",
+  "responsable": "Adriana",
+  "prueba": "Que no adivine el sabor cuando está tapado con un borrón.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": [
+          "Mochi Arándano",
+          "Mochi Bites",
+          "Mochi frutos rojos",
+          "Mochi Vainilla",
+          "Mochis Fresa",
+          null
+        ],
+        "tipo": "uso",
+        "cantidad": 3,
+        "confianza": "baja"
+      }
+    ],
+    "nota": "Se califica que no adivine: cualquier mochi o sin producto, con confianza baja y un aviso."
+  }
+}

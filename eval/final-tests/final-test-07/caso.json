@@ -1,0 +1,28 @@
+{
+  "id": "final-test-07",
+  "codigo": "T07",
+  "titulo": "Spanglish escrito",
+  "responsable": "Adriana",
+  "prueba": "Traducción literal (\"pies de queso\") y número en inglés.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "se vendieron 4 pies de queso de mango y two cocopalm"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheesecake Mango",
+        "tipo": "uso",
+        "cantidad": 4
+      },
+      {
+        "producto": "CocoPalm Mango",
+        "tipo": "uso",
+        "cantidad": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "final-test-21",
+  "codigo": "A11",
+  "titulo": "Spanglish: números y marcas en inglés",
+  "responsable": "Adriana",
+  "prueba": "Números en inglés y marcas pronunciadas con acento en español.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Ocean Bomb",
+        "tipo": "entrada",
+        "cantidad": 12
+      },
+      {
+        "producto": "CocoPalm Mango",
+        "tipo": "entrada",
+        "cantidad": 6
+      }
+    ]
+  }
+}

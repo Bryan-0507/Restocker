@@ -1,0 +1,62 @@
+{
+  "call": {
+    "latencyMs": 2192,
+    "inputTokens": 1230,
+    "outputTokens": 66,
+    "costUsd": 0.000534,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p1",
+          "type": "entrada",
+          "quantity": 24
+        },
+        {
+          "input_id": "e1",
+          "product_id": "p14",
+          "type": "entrada",
+          "quantity": 12
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "b241b3b9-bd31-438e-97f9-b10255340b75",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 24,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "7c76f5c8-1e2c-4586-b65f-5d64f81c6c5f",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 12,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

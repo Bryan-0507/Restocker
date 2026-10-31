@@ -1,0 +1,23 @@
+{
+  "id": "final-test-16",
+  "codigo": "A06",
+  "titulo": "Música alta de fondo",
+  "responsable": "Bryan",
+  "prueba": "Música fuerte y un sabor que no es un producto aparte (Ocean Bomb de uva).",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Ocean Bomb",
+        "tipo": "entrada",
+        "cantidad": 15
+      }
+    ]
+  }
+}

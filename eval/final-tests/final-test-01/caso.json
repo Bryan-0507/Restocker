@@ -1,0 +1,23 @@
+{
+  "id": "final-test-01",
+  "codigo": "T01",
+  "titulo": "Venta simple",
+  "responsable": "Bryan",
+  "prueba": "El caso base: un producto, un tipo, una cantidad.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "vendí 3 mochis de vainilla"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi Vainilla",
+        "tipo": "uso",
+        "cantidad": 3
+      }
+    ]
+  }
+}

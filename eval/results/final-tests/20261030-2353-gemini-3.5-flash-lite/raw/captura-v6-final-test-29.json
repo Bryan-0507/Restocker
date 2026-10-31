@@ -1,0 +1,93 @@
+{
+  "call": {
+    "latencyMs": 2558,
+    "inputTokens": 6161,
+    "outputTokens": 329,
+    "costUsd": 0.0026708,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "cheesecake mango : 4",
+          "product_mention": "cheesecake mango",
+          "product_id": "p3",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": 4,
+          "unit_mentioned": null,
+          "quantity": 4,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "Cheesecake nutella : 3",
+          "product_mention": "Cheesecake nutella",
+          "product_id": "p4",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": 3,
+          "unit_mentioned": null,
+          "quantity": 3,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 4,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "18160256-76dc-471e-9dde-07ad5e4c1fc3",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 3,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

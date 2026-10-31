@@ -1,0 +1,51 @@
+{
+  "call": {
+    "latencyMs": 907,
+    "inputTokens": 171,
+    "outputTokens": 26,
+    "costUsd": 0.0001163,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p13",
+          "type": "entrada",
+          "quantity": null
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "46850e5b-1d27-426e-a042-41f62cc0c4f9",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": null,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": false,
+    "categoriesOk": 0,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 1,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Estado: se esperaba rechazada y salió aceptada",
+      "Categoría de la entrada 1: se esperaba sin_movimiento y salió ninguna",
+      "Sobró: Mochis Fresa, entrada, sin cantidad"
+    ]
+  }
+}

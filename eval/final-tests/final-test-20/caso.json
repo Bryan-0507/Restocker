@@ -1,0 +1,28 @@
+{
+  "id": "final-test-20",
+  "codigo": "A10",
+  "titulo": "Spanglish: pie de queso",
+  "responsable": "Adriana",
+  "prueba": "\"Pie de queso\" pronunciado \"pai\" debe ir a los cheesecakes.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheescake pistacho",
+        "tipo": "uso",
+        "cantidad": 3
+      },
+      {
+        "producto": "Cheesecake Nutella",
+        "tipo": "uso",
+        "cantidad": 2
+      }
+    ]
+  }
+}

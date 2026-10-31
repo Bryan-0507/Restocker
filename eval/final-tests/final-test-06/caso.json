@@ -1,0 +1,28 @@
+{
+  "id": "final-test-06",
+  "codigo": "T06",
+  "titulo": "Cantidades en palabras",
+  "responsable": "Adriana",
+  "prueba": "\"Media docena\" y \"un par\" convertidos a números.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "hoy salieron media docena de mochis de fresa y un par de chocolates ajolote"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochis Fresa",
+        "tipo": "uso",
+        "cantidad": 6
+      },
+      {
+        "producto": "Chocolate Ajolote",
+        "tipo": "uso",
+        "cantidad": 2
+      }
+    ]
+  }
+}

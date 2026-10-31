@@ -1,0 +1,22 @@
+{
+  "id": "final-test-49",
+  "codigo": "R05",
+  "titulo": "Audio sin voz",
+  "responsable": "Adriana",
+  "prueba": "Rechazo cuando el audio solo tiene música.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "rechazada",
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "inaudible"
+      }
+    ]
+  }
+}

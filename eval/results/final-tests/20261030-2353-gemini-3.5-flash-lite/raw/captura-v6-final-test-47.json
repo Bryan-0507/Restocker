@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 1309,
+    "inputTokens": 5093,
+    "outputTokens": 85,
+    "costUsd": 0.0017403999999999998,
+    "waits": 2,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "sin_movimiento",
+          "rejection_reason": "El mensaje menciona un producto pero no dice qué pasó con él."
+        }
+      ],
+      "status": "rechazada",
+      "message": "Mandaste un mensaje mencionando un producto pero sin indicar ningún movimiento. Escribe qué entró, se usó o se perdió."
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": "sin_movimiento",
+        "reason": "El mensaje menciona un producto pero no dice qué pasó con él.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": "Mandaste un mensaje mencionando un producto pero sin indicar ningún movimiento. Escribe qué entró, se usó o se perdió."
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": []
+  }
+}

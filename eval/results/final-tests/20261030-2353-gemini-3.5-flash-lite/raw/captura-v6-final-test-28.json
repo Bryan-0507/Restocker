@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 2990,
+    "inputTokens": 6161,
+    "outputTokens": 228,
+    "costUsd": 0.0024183000000000004,
+    "waits": 2,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "2 chesck nut perdidos (se cayeron)",
+          "product_mention": "chesck nut",
+          "product_id": "p4",
+          "suggested_product_name": null,
+          "type": "perdida",
+          "quantity_mentioned": 2,
+          "unit_mentioned": null,
+          "quantity": 2,
+          "review_note": "Identifiqué 'chesck nut' como Cheesecake Nutella por el contexto y abreviatura.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "18160256-76dc-471e-9dde-07ad5e4c1fc3",
+        "suggested": null,
+        "type": "perdida",
+        "quantity": 2,
+        "confidence": "media",
+        "note": "Identifiqué 'chesck nut' como Cheesecake Nutella por el contexto y abreviatura."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

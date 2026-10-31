@@ -1,0 +1,84 @@
+{
+  "call": {
+    "latencyMs": 3171,
+    "inputTokens": 6287,
+    "outputTokens": 288,
+    "costUsd": 0.0026061,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "Se vendieron tres CocoPalma.",
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        },
+        {
+          "input_id": "e2",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "sin_relacion",
+          "rejection_reason": "La foto es una captura de pantalla de Spotify reproduciendo una canción, no muestra productos ni inventario."
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Se vendieron tres CocoPalma",
+          "product_mention": "CocoPalma",
+          "product_id": "p7",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 3,
+          "unit_mentioned": null,
+          "quantity": 3,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "Se vendieron tres CocoPalma."
+      },
+      {
+        "relevant": false,
+        "category": "sin_relacion",
+        "reason": "La foto es una captura de pantalla de Spotify reproduciendo una canción, no muestra productos ni inventario.",
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "ce5a51ea-aa88-4db9-8951-c14ef9a95b84",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 3,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

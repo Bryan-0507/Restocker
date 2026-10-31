@@ -1,0 +1,23 @@
+{
+  "id": "final-test-34",
+  "codigo": "F11",
+  "titulo": "Presentación dentro de la línea",
+  "responsable": "Adriana",
+  "prueba": "\"5 pzs\" describe el paquete; la cantidad son los 4 paquetes.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi Bites",
+        "tipo": "entrada",
+        "cantidad": 4
+      }
+    ]
+  }
+}

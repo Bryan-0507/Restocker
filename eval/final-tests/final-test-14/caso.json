@@ -1,0 +1,23 @@
+{
+  "id": "final-test-14",
+  "codigo": "A04",
+  "titulo": "Autocorrección",
+  "responsable": "Bryan",
+  "prueba": "Que tome la cantidad corregida y no la primera.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Buldak Carbonara",
+        "tipo": "uso",
+        "cantidad": 3
+      }
+    ]
+  }
+}

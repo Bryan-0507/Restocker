@@ -1,0 +1,28 @@
+{
+  "id": "final-test-33",
+  "codigo": "F10",
+  "titulo": "Nota de proveedor con precios",
+  "responsable": "Adriana",
+  "prueba": "Que tome la cantidad y no el precio ni el total.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Buldak Carbonara",
+        "tipo": "entrada",
+        "cantidad": 24
+      },
+      {
+        "producto": "Ocean Bomb",
+        "tipo": "entrada",
+        "cantidad": 12
+      }
+    ]
+  }
+}

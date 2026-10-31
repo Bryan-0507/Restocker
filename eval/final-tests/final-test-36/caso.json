@@ -1,0 +1,22 @@
+{
+  "id": "final-test-36",
+  "codigo": "F13",
+  "titulo": "Foto oscura y lejana",
+  "responsable": "Bryan",
+  "prueba": "Rechazo por ilegible cuando la nota está lejos y sin luz.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "rechazada",
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "ilegible"
+      }
+    ]
+  }
+}

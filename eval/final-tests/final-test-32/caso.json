@@ -1,0 +1,33 @@
+{
+  "id": "final-test-32",
+  "codigo": "F09",
+  "titulo": "Ticket impreso",
+  "responsable": "Adriana",
+  "prueba": "Ticket impreso de proveedor con varias columnas.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Chocolate Ajolote",
+        "tipo": "entrada",
+        "cantidad": 8
+      },
+      {
+        "producto": "Chocolate Oro Dubai",
+        "tipo": "entrada",
+        "cantidad": 4
+      },
+      {
+        "producto": "Buldak Carbonara",
+        "tipo": "entrada",
+        "cantidad": 6
+      }
+    ]
+  }
+}

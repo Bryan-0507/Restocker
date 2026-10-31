@@ -1,0 +1,22 @@
+{
+  "id": "final-test-35",
+  "codigo": "F12",
+  "titulo": "Foto movida",
+  "responsable": "Bryan",
+  "prueba": "Rechazo por ilegible en lugar de inventar.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "rechazada",
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "ilegible"
+      }
+    ]
+  }
+}

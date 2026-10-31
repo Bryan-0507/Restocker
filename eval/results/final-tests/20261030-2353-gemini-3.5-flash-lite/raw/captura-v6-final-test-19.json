@@ -1,0 +1,74 @@
+{
+  "call": {
+    "latencyMs": 1832,
+    "inputTokens": 5239,
+    "outputTokens": 227,
+    "costUsd": 0.0021392,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "Hoy hoy no piensas seis Buldak Carbonara",
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "seis Buldak Carbonara",
+          "product_mention": "Buldak Carbonara",
+          "product_id": "p1",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 6,
+          "unit_mentioned": null,
+          "quantity": 6,
+          "review_note": "Se infiere que es un uso por el contexto de la frase.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "Hoy hoy no piensas seis Buldak Carbonara"
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "b241b3b9-bd31-438e-97f9-b10255340b75",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 6,
+        "confidence": "media",
+        "note": "Se infiere que es un uso por el contexto de la frase."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Faltó: Buldak Carbonara, ajuste, 6",
+      "Sobró: Buldak Carbonara, uso, 6"
+    ]
+  }
+}

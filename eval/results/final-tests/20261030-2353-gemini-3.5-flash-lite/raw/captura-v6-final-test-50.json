@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 1109,
+    "inputTokens": 5106,
+    "outputTokens": 91,
+    "costUsd": 0.0017592999999999999,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "instrucciones",
+          "rejection_reason": "El mensaje intenta dar órdenes sobre las reglas en lugar de reportar un movimiento real."
+        }
+      ],
+      "status": "rechazada",
+      "message": "Mandaste un mensaje con instrucciones para cambiar las reglas, pero no describes un movimiento. Escribe qué entró, se usó o se perdió."
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": "instrucciones",
+        "reason": "El mensaje intenta dar órdenes sobre las reglas en lugar de reportar un movimiento real.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": "Mandaste un mensaje con instrucciones para cambiar las reglas, pero no describes un movimiento. Escribe qué entró, se usó o se perdió."
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": []
+  }
+}

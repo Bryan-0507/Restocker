@@ -1,0 +1,28 @@
+{
+  "id": "final-test-24",
+  "codigo": "F01",
+  "titulo": "Nota a mano, letra clara",
+  "responsable": "Bryan",
+  "prueba": "El caso base en foto.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi Vainilla",
+        "tipo": "uso",
+        "cantidad": 3
+      },
+      {
+        "producto": "Copa tres chocolates",
+        "tipo": "uso",
+        "cantidad": 2
+      }
+    ]
+  }
+}

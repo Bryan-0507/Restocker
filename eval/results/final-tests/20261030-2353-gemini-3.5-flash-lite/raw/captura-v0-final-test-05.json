@@ -1,0 +1,62 @@
+{
+  "call": {
+    "latencyMs": 1229,
+    "inputTokens": 188,
+    "outputTokens": 48,
+    "costUsd": 0.0001764,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p2",
+          "type": "uso",
+          "quantity": 2
+        },
+        {
+          "input_id": "e1",
+          "product_id": "p9",
+          "type": "uso",
+          "quantity": 1
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "3021fd2c-6f1d-421b-b3f3-28ee040eddf2",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "60d5a8c5-3008-43b1-b9cc-646be3ff270e",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 1,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

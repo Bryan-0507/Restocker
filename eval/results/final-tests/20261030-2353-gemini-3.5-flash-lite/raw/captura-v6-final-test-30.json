@@ -1,0 +1,93 @@
+{
+  "call": {
+    "latencyMs": 2300,
+    "inputTokens": 6197,
+    "outputTokens": 340,
+    "costUsd": 0.0027091,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Ocean x6",
+          "product_mention": "Ocean",
+          "product_id": "p14",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": 6,
+          "unit_mentioned": null,
+          "quantity": 6,
+          "review_note": "Interpretado como conteo (ajuste) para Ocean Bomb.",
+          "confidence": "media"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "Coco x5",
+          "product_mention": "Coco",
+          "product_id": "p7",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": 5,
+          "unit_mentioned": null,
+          "quantity": 5,
+          "review_note": "Interpretado como conteo (ajuste) para CocoPalm Mango.",
+          "confidence": "baja"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "7c76f5c8-1e2c-4586-b65f-5d64f81c6c5f",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 6,
+        "confidence": "media",
+        "note": "Interpretado como conteo (ajuste) para Ocean Bomb."
+      },
+      {
+        "inputIndex": 0,
+        "productId": "ce5a51ea-aa88-4db9-8951-c14ef9a95b84",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 5,
+        "confidence": "baja",
+        "note": "Interpretado como conteo (ajuste) para CocoPalm Mango."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 2453,
+    "inputTokens": 6201,
+    "outputTokens": 145,
+    "costUsd": 0.0022228,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Vendidos: Mochi [tachado] 3",
+          "product_mention": "Mochi",
+          "product_id": null,
+          "suggested_product_name": "Mochi",
+          "type": "uso",
+          "quantity_mentioned": 3,
+          "unit_mentioned": null,
+          "quantity": 3,
+          "review_note": "El tipo específico de mochi está tachado en la nota, por lo que no se puede saber a cuál corresponde exactamente.",
+          "confidence": "baja"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": null,
+        "suggested": "Mochi",
+        "type": "uso",
+        "quantity": 3,
+        "confidence": "baja",
+        "note": "El tipo específico de mochi está tachado en la nota, por lo que no se puede saber a cuál corresponde exactamente."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

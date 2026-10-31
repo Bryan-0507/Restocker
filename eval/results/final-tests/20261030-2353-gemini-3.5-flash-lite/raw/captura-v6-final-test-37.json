@@ -1,0 +1,84 @@
+{
+  "call": {
+    "latencyMs": 5393,
+    "inputTokens": 6288,
+    "outputTokens": 184,
+    "costUsd": 0.0023464,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        },
+        {
+          "input_id": "e2",
+          "transcription": "Llegaron 20 mochis fresa.",
+          "is_relevant": false,
+          "rejection_category": "sin_relacion",
+          "rejection_reason": "Esta entrada duplica exactamente el movimiento reportado en la foto de e1."
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Llegaron 20 mochis fresa",
+          "product_mention": "mochis fresa",
+          "product_id": "p13",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 20,
+          "unit_mentioned": null,
+          "quantity": 20,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      },
+      {
+        "relevant": false,
+        "category": "sin_relacion",
+        "reason": "Esta entrada duplica exactamente el movimiento reportado en la foto de e1.",
+        "transcription": "Llegaron 20 mochis fresa."
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "46850e5b-1d27-426e-a042-41f62cc0c4f9",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 20,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

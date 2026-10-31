@@ -1,0 +1,51 @@
+{
+  "call": {
+    "latencyMs": 1715,
+    "inputTokens": 1228,
+    "outputTokens": 52,
+    "costUsd": 0.0004984,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": null,
+          "type": "entrada",
+          "quantity": null
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": null,
+        "suggested": null,
+        "type": "entrada",
+        "quantity": null,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": false,
+    "categoriesOk": 0,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 1,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Estado: se esperaba rechazada y salió aceptada",
+      "Categoría de la entrada 1: se esperaba ilegible y salió ninguna",
+      "Sobró: sin producto (?), entrada, sin cantidad"
+    ]
+  }
+}

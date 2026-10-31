@@ -1,0 +1,23 @@
+{
+  "id": "final-test-28",
+  "codigo": "F05",
+  "titulo": "Post-it con abreviaturas",
+  "responsable": "Adriana",
+  "prueba": "Abreviaturas fuertes en un papel pequeño.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheesecake Nutella",
+        "tipo": "perdida",
+        "cantidad": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 1492,
+    "inputTokens": 5097,
+    "outputTokens": 222,
+    "costUsd": 0.0020840999999999998,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "vendimos 5 paquetes de mochi bites",
+          "product_mention": "mochi bites",
+          "product_id": "p10",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 5,
+          "unit_mentioned": "paquetes",
+          "quantity": 5,
+          "review_note": "Se interpretaron los 5 paquetes como 5 unidades del producto.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "3eb5dd3c-036a-4eaa-8308-d1c7bfc6a6c2",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 5,
+        "confidence": "media",
+        "note": "Se interpretaron los 5 paquetes como 5 unidades del producto."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

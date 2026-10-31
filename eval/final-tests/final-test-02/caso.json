@@ -1,0 +1,33 @@
+{
+  "id": "final-test-02",
+  "codigo": "T02",
+  "titulo": "Llegada del proveedor con varios productos",
+  "responsable": "Bryan",
+  "prueba": "Varias entradas en un solo mensaje.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "llegó el proveedor: 12 ocean bomb, 6 cocopalm de mango y 10 buldak carbonara"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Ocean Bomb",
+        "tipo": "entrada",
+        "cantidad": 12
+      },
+      {
+        "producto": "CocoPalm Mango",
+        "tipo": "entrada",
+        "cantidad": 6
+      },
+      {
+        "producto": "Buldak Carbonara",
+        "tipo": "entrada",
+        "cantidad": 10
+      }
+    ]
+  }
+}

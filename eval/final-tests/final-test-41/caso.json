@@ -1,0 +1,33 @@
+{
+  "id": "final-test-41",
+  "codigo": "M05",
+  "titulo": "Pregunta y movimiento",
+  "responsable": "Adriana",
+  "prueba": "Separar una consulta de un movimiento real.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "cuántos mochis quedan?"
+    },
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi Arándano",
+        "tipo": "perdida",
+        "cantidad": 2
+      }
+    ],
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "consulta"
+      }
+    ]
+  }
+}

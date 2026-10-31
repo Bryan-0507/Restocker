@@ -1,0 +1,32 @@
+{
+  "id": "final-test-08",
+  "codigo": "T08",
+  "titulo": "Producto ambiguo",
+  "responsable": "Adriana",
+  "prueba": "Cinco productos son mochis y el mensaje no dice cuál.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "vendí 2 mochis"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": [
+          "Mochi Arándano",
+          "Mochi Bites",
+          "Mochi frutos rojos",
+          "Mochi Vainilla",
+          "Mochis Fresa",
+          null
+        ],
+        "tipo": "uso",
+        "cantidad": 2,
+        "confianza": "baja"
+      }
+    ],
+    "nota": "Cualquier mochi o producto sin asignar es válido si trae confianza baja y un aviso de la duda."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "final-test-23",
+  "codigo": "A13",
+  "titulo": "Charla larga con un solo movimiento",
+  "responsable": "Adriana",
+  "prueba": "Encontrar un movimiento dentro de 30 s de plática.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi frutos rojos",
+        "tipo": "perdida",
+        "cantidad": 1
+      }
+    ]
+  }
+}

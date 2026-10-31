@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 3160,
+    "inputTokens": 625,
+    "outputTokens": 35,
+    "costUsd": 0.000275,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p11",
+          "type": "perdida",
+          "quantity": 1
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "fa4b1629-9159-4592-9b87-9f56602bb6a8",
+        "suggested": null,
+        "type": "perdida",
+        "quantity": 1,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "call": {
+    "latencyMs": 1668,
+    "inputTokens": 5108,
+    "outputTokens": 340,
+    "costUsd": 0.0023824,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "quedan 5 cheesecakes de mango",
+          "product_mention": "cheesecakes de mango",
+          "product_id": "p3",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": 5,
+          "unit_mentioned": null,
+          "quantity": 5,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "8 de nutella",
+          "product_mention": "nutella",
+          "product_id": "p4",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": 8,
+          "unit_mentioned": null,
+          "quantity": 8,
+          "review_note": "Inferido del contexto como Cheesecake Nutella por el tipo de producto.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 5,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "18160256-76dc-471e-9dde-07ad5e4c1fc3",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 8,
+        "confidence": "media",
+        "note": "Inferido del contexto como Cheesecake Nutella por el tipo de producto."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

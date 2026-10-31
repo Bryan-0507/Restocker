@@ -1,0 +1,23 @@
+{
+  "id": "final-test-18",
+  "codigo": "A08",
+  "titulo": "Ruido de máquina",
+  "responsable": "Adriana",
+  "prueba": "Ruido constante fuerte, como una licuadora.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp4"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Copa tres chocolates",
+        "tipo": "perdida",
+        "cantidad": 1
+      }
+    ]
+  }
+}

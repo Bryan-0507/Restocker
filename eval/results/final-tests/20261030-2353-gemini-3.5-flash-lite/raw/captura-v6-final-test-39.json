@@ -1,0 +1,84 @@
+{
+  "call": {
+    "latencyMs": 2394,
+    "inputTokens": 6219,
+    "outputTokens": 269,
+    "costUsd": 0.0025382,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        },
+        {
+          "input_id": "e2",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Cheesecake pistacho 5 vendidos",
+          "product_mention": "Cheesecake pistacho",
+          "product_id": "p2",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 5,
+          "unit_mentioned": null,
+          "quantity": 4,
+          "review_note": "El siguiente mensaje corrige la cantidad a 4 unidades.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      },
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "3021fd2c-6f1d-421b-b3f3-28ee040eddf2",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 4,
+        "confidence": "media",
+        "note": "El siguiente mensaje corrige la cantidad a 4 unidades."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

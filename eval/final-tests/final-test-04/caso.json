@@ -1,0 +1,28 @@
+{
+  "id": "final-test-04",
+  "codigo": "T04",
+  "titulo": "Conteo de vitrina",
+  "responsable": "Bryan",
+  "prueba": "Ajuste con el total contado y un producto nombrado de forma incompleta (\"8 de nutella\").",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "conté la vitrina, quedan 5 cheesecakes de mango y 8 de nutella"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheesecake Mango",
+        "tipo": "ajuste",
+        "cantidad": 5
+      },
+      {
+        "producto": "Cheesecake Nutella",
+        "tipo": "ajuste",
+        "cantidad": 8
+      }
+    ]
+  }
+}

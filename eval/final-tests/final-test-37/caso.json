@@ -1,0 +1,28 @@
+{
+  "id": "final-test-37",
+  "codigo": "M01",
+  "titulo": "Mismo movimiento en foto y audio",
+  "responsable": "Bryan",
+  "prueba": "Que no duplique un movimiento que aparece en dos entradas.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    },
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochis Fresa",
+        "tipo": "entrada",
+        "cantidad": 20
+      }
+    ],
+    "nota": "Una sola propuesta; un aviso debe mencionar la otra entrada."
+  }
+}

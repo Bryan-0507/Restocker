@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 4397,
+    "inputTokens": 5556,
+    "outputTokens": 274,
+    "costUsd": 0.0023518000000000002,
+    "waits": 1,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "Uy. Hoy estuvo bien lleno. Vino un montón de gente del colegio y la señora de siempre preguntó si íbamos a tener los de temporada. Ay, se me cayó un mochi de de frutos rojos cuando lo estaba sacando. Mañana te cuento lo de la reunión.",
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "se me cayó un mochi de de frutos rojos",
+          "product_mention": "mochi de de frutos rojos",
+          "product_id": "p11",
+          "suggested_product_name": null,
+          "type": "perdida",
+          "quantity_mentioned": 1,
+          "unit_mentioned": null,
+          "quantity": 1,
+          "review_note": "Se cayó un mochi de frutos rojos.",
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "Uy. Hoy estuvo bien lleno. Vino un montón de gente del colegio y la señora de siempre preguntó si íbamos a tener los de temporada. Ay, se me cayó un mochi de de frutos rojos cuando lo estaba sacando. Mañana te cuento lo de la reunión."
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "fa4b1629-9159-4592-9b87-9f56602bb6a8",
+        "suggested": null,
+        "type": "perdida",
+        "quantity": 1,
+        "confidence": "alta",
+        "note": "Se cayó un mochi de frutos rojos."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

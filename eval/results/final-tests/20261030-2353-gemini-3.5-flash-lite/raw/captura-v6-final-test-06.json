@@ -1,0 +1,93 @@
+{
+  "call": {
+    "latencyMs": 7970,
+    "inputTokens": 5108,
+    "outputTokens": 355,
+    "costUsd": 0.0024198999999999996,
+    "waits": 3,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "hoy salieron media docena de mochis de fresa",
+          "product_mention": "mochis de fresa",
+          "product_id": "p13",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 6,
+          "unit_mentioned": "media docena",
+          "quantity": 6,
+          "review_note": "Convertí media docena a 6 unidades.",
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "un par de chocolates ajolote",
+          "product_mention": "chocolates ajolote",
+          "product_id": "p5",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 2,
+          "unit_mentioned": "par",
+          "quantity": 2,
+          "review_note": "Convertí un par a 2 unidades.",
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "46850e5b-1d27-426e-a042-41f62cc0c4f9",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 6,
+        "confidence": "alta",
+        "note": "Convertí media docena a 6 unidades."
+      },
+      {
+        "inputIndex": 0,
+        "productId": "772398c5-b6f1-4b67-b439-d64cda835650",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": "alta",
+        "note": "Convertí un par a 2 unidades."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

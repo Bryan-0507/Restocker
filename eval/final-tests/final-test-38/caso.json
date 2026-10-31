@@ -1,0 +1,32 @@
+{
+  "id": "final-test-38",
+  "codigo": "M02",
+  "titulo": "Foto y texto que se complementan",
+  "responsable": "Bryan",
+  "prueba": "Propuestas que salen de entradas distintas.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    },
+    {
+      "tipo": "texto",
+      "texto": "y vendí 2 buldak"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Copa tres chocolates",
+        "tipo": "ajuste",
+        "cantidad": 4
+      },
+      {
+        "producto": "Buldak Carbonara",
+        "tipo": "uso",
+        "cantidad": 2
+      }
+    ]
+  }
+}

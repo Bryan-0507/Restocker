@@ -1,0 +1,93 @@
+{
+  "call": {
+    "latencyMs": 3145,
+    "inputTokens": 5404,
+    "outputTokens": 346,
+    "costUsd": 0.0024861999999999996,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "mira este hoy se llevaron como dos ocean bomb y un coco coco palm ¿va?",
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "dos ocean bomb",
+          "product_mention": "ocean bomb",
+          "product_id": "p14",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 2,
+          "unit_mentioned": null,
+          "quantity": 2,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "un coco coco palm",
+          "product_mention": "coco coco palm",
+          "product_id": "p7",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 1,
+          "unit_mentioned": null,
+          "quantity": 1,
+          "review_note": "Asocio 'coco coco palm' con CocoPalm Mango del catálogo.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "mira este hoy se llevaron como dos ocean bomb y un coco coco palm ¿va?"
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "7c76f5c8-1e2c-4586-b65f-5d64f81c6c5f",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "ce5a51ea-aa88-4db9-8951-c14ef9a95b84",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 1,
+        "confidence": "media",
+        "note": "Asocio 'coco coco palm' con CocoPalm Mango del catálogo."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

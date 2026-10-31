@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 7300,
+    "inputTokens": 5226,
+    "outputTokens": 227,
+    "costUsd": 0.0021353,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "vendí 5 Buldak. Ah, no, perdón, eran tres.",
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "eran tres",
+          "product_mention": "Buldak",
+          "product_id": "p1",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 3,
+          "unit_mentioned": null,
+          "quantity": 3,
+          "review_note": "Corregido de 5 a 3 según la nota de voz.",
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "vendí 5 Buldak. Ah, no, perdón, eran tres."
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "b241b3b9-bd31-438e-97f9-b10255340b75",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 3,
+        "confidence": "alta",
+        "note": "Corregido de 5 a 3 según la nota de voz."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}

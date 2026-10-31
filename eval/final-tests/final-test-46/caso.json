@@ -1,0 +1,22 @@
+{
+  "id": "final-test-46",
+  "codigo": "R02",
+  "titulo": "Pregunta por existencias",
+  "responsable": "Bryan",
+  "prueba": "Rechazo por consulta.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "hola, cuántos cheesecakes de mango nos quedan?"
+    }
+  ],
+  "esperado": {
+    "status": "rechazada",
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "consulta"
+      }
+    ]
+  }
+}

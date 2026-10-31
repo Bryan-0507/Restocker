@@ -1,0 +1,62 @@
+{
+  "call": {
+    "latencyMs": 2419,
+    "inputTokens": 1230,
+    "outputTokens": 100,
+    "costUsd": 0.000619,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p3",
+          "type": "ajuste",
+          "quantity": 4
+        },
+        {
+          "input_id": "e1",
+          "product_id": "p4",
+          "type": "ajuste",
+          "quantity": 3
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 4,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "18160256-76dc-471e-9dde-07ad5e4c1fc3",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 3,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

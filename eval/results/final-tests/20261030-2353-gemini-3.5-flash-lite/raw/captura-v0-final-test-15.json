@@ -1,0 +1,65 @@
+{
+  "call": {
+    "latencyMs": 3103,
+    "inputTokens": 473,
+    "outputTokens": 97,
+    "costUsd": 0.00038439999999999997,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": null,
+          "type": "uso",
+          "quantity": 2
+        },
+        {
+          "input_id": "e1",
+          "product_id": "p7",
+          "type": "uso",
+          "quantity": 1
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": null,
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "ce5a51ea-aa88-4db9-8951-c14ef9a95b84",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 1,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 1,
+    "perfect": 1,
+    "failures": [
+      "Faltó: Ocean Bomb, uso, 2",
+      "Sobró: sin producto (?), uso, 2"
+    ]
+  }
+}

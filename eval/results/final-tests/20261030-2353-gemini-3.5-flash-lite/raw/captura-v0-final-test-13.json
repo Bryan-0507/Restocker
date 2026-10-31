@@ -1,0 +1,84 @@
+{
+  "call": {
+    "latencyMs": 2368,
+    "inputTokens": 377,
+    "outputTokens": 145,
+    "costUsd": 0.0004756,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p11",
+          "type": "entrada",
+          "quantity": 10
+        },
+        {
+          "input_id": "e1",
+          "product_id": "p12",
+          "type": "entrada",
+          "quantity": 12
+        },
+        {
+          "input_id": "e1",
+          "product_id": "p9",
+          "type": "entrada",
+          "quantity": 9
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "fa4b1629-9159-4592-9b87-9f56602bb6a8",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 10,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "b9d149e9-6d92-4403-8cf1-4f6ed810d29e",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 12,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "60d5a8c5-3008-43b1-b9cc-646be3ff270e",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 9,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 3,
+    "predictedItems": 3,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Faltó: Mochi frutos rojos, ajuste, 10",
+      "Faltó: Mochi Vainilla, ajuste, 12",
+      "Faltó: Mochi Arándano, ajuste, 9",
+      "Sobró: Mochi frutos rojos, entrada, 10",
+      "Sobró: Mochi Vainilla, entrada, 12",
+      "Sobró: Mochi Arándano, entrada, 9"
+    ]
+  }
+}

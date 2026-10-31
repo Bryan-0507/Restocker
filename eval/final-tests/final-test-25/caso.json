@@ -1,0 +1,28 @@
+{
+  "id": "final-test-25",
+  "codigo": "F02",
+  "titulo": "Nota a mano, letra corrida",
+  "responsable": "Bryan",
+  "prueba": "Letra cursiva y rápida.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Buldak Carbonara",
+        "tipo": "entrada",
+        "cantidad": 10
+      },
+      {
+        "producto": "Ocean Bomb",
+        "tipo": "entrada",
+        "cantidad": 12
+      }
+    ]
+  }
+}

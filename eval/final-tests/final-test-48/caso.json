@@ -1,0 +1,22 @@
+{
+  "id": "final-test-48",
+  "codigo": "R04",
+  "titulo": "Foto sin relación",
+  "responsable": "Adriana",
+  "prueba": "Rechazo de una foto real que no es del negocio.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "rechazada",
+    "rechazos": [
+      {
+        "entrada": 1,
+        "categoria": "sin_relacion"
+      }
+    ]
+  }
+}

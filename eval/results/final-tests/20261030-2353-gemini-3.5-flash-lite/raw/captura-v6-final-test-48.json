@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 5612,
+    "inputTokens": 6161,
+    "outputTokens": 143,
+    "costUsd": 0.0022058000000000004,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "sin_relacion",
+          "rejection_reason": "La foto muestra una pared decorada con manga y sillas, no productos ni un ticket de inventario."
+        }
+      ],
+      "status": "rechazada",
+      "message": "Mandaste una foto de la decoración del local, que no muestra productos ni movimientos de inventario. Manda la foto del ticket o escribe qué entró, se usó o se perdió."
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": "sin_relacion",
+        "reason": "La foto muestra una pared decorada con manga y sillas, no productos ni un ticket de inventario.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": "Mandaste una foto de la decoración del local, que no muestra productos ni movimientos de inventario. Manda la foto del ticket o escribe qué entró, se usó o se perdió."
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": []
+  }
+}

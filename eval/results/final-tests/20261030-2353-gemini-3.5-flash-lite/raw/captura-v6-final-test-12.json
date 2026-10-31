@@ -1,0 +1,115 @@
+{
+  "call": {
+    "latencyMs": 5390,
+    "inputTokens": 5356,
+    "outputTokens": 314,
+    "costUsd": 0.0023918000000000003,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "Llegaron veinte mochis de fresa, se vendieron tres cheesecake de Nutella y se nos echó a perder uno de mango.",
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "Llegaron veinte mochis de fresa",
+          "product_mention": "mochis de fresa",
+          "product_id": "p13",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 20,
+          "unit_mentioned": null,
+          "quantity": 20,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "se vendieron tres cheesecake de Nutella",
+          "product_mention": "cheesecake de Nutella",
+          "product_id": "p4",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 3,
+          "unit_mentioned": null,
+          "quantity": 3,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "se nos echó a perder uno de mango",
+          "product_mention": "uno de mango",
+          "product_id": "p3",
+          "suggested_product_name": null,
+          "type": "perdida",
+          "quantity_mentioned": 1,
+          "unit_mentioned": null,
+          "quantity": 1,
+          "review_note": "Asumido como Cheesecake Mango por el contexto.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "Llegaron veinte mochis de fresa, se vendieron tres cheesecake de Nutella y se nos echó a perder uno de mango."
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "46850e5b-1d27-426e-a042-41f62cc0c4f9",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 20,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "18160256-76dc-471e-9dde-07ad5e4c1fc3",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 3,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "a7ddf2af-5c72-48db-9cb6-1deb3b2c347c",
+        "suggested": null,
+        "type": "perdida",
+        "quantity": 1,
+        "confidence": "media",
+        "note": "Asumido como Cheesecake Mango por el contexto."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 3,
+    "predictedItems": 3,
+    "matched": 3,
+    "perfect": 3,
+    "failures": []
+  }
+}

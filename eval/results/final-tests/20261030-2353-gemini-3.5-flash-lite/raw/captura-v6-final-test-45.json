@@ -1,0 +1,47 @@
+{
+  "call": {
+    "latencyMs": 1161,
+    "inputTokens": 5094,
+    "outputTokens": 119,
+    "costUsd": 0.0018257,
+    "waits": 1,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": false,
+          "rejection_category": "sin_sentido",
+          "rejection_reason": "El texto no forma ninguna palabra."
+        }
+      ],
+      "status": "rechazada",
+      "message": "Mandaste un texto que no tiene sentido ni forma palabras. Escribe qué entró, se usó o se perdió para poder registrarlo."
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "rechazada",
+    "inputs": [
+      {
+        "relevant": false,
+        "category": "sin_sentido",
+        "reason": "El texto no forma ninguna palabra.",
+        "transcription": null
+      }
+    ],
+    "items": [],
+    "message": "Mandaste un texto que no tiene sentido ni forma palabras. Escribe qué entró, se usó o se perdió para poder registrarlo."
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 1,
+    "categoriesExpected": 1,
+    "expectedItems": 0,
+    "predictedItems": 0,
+    "matched": 0,
+    "perfect": 0,
+    "failures": []
+  }
+}

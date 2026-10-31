@@ -1,0 +1,49 @@
+{
+  "call": {
+    "latencyMs": 969,
+    "inputTokens": 172,
+    "outputTokens": 34,
+    "costUsd": 0.00013659999999999999,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p13",
+          "type": "uso",
+          "quantity": 2
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "46850e5b-1d27-426e-a042-41f62cc0c4f9",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 0,
+    "failures": [
+      "Confianza de un producto ambiguo: se esperaba baja y salió ninguna"
+    ]
+  }
+}

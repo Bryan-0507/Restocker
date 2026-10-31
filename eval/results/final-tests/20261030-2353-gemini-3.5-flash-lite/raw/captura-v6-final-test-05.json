@@ -1,0 +1,93 @@
+{
+  "call": {
+    "latencyMs": 1995,
+    "inputTokens": 5110,
+    "outputTokens": 352,
+    "costUsd": 0.002413,
+    "waits": 2,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "bendi 2 chesecake pistacho",
+          "product_mention": "chesecake pistacho",
+          "product_id": "p2",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 2,
+          "unit_mentioned": null,
+          "quantity": 2,
+          "review_note": "Identificado por similitud de nombre con Cheescake pistacho.",
+          "confidence": "media"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "1 mochi arandano",
+          "product_mention": "mochi arandano",
+          "product_id": "p9",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 1,
+          "unit_mentioned": null,
+          "quantity": 1,
+          "review_note": "Identificado por similitud con Mochi Arándano.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "3021fd2c-6f1d-421b-b3f3-28ee040eddf2",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": "media",
+        "note": "Identificado por similitud de nombre con Cheescake pistacho."
+      },
+      {
+        "inputIndex": 0,
+        "productId": "60d5a8c5-3008-43b1-b9cc-646be3ff270e",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 1,
+        "confidence": "media",
+        "note": "Identificado por similitud con Mochi Arándano."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

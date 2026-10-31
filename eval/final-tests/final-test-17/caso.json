@@ -1,0 +1,28 @@
+{
+  "id": "final-test-17",
+  "codigo": "A07",
+  "titulo": "Ruido de cafetería",
+  "responsable": "Bryan",
+  "prueba": "Voces de fondo que no son parte del mensaje.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp4"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Chocolate Ajolote",
+        "tipo": "uso",
+        "cantidad": 2
+      },
+      {
+        "producto": "Chocolate Oro Dubai",
+        "tipo": "uso",
+        "cantidad": 1
+      }
+    ]
+  }
+}

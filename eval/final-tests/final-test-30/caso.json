@@ -1,0 +1,28 @@
+{
+  "id": "final-test-30",
+  "codigo": "F07",
+  "titulo": "Conteo con abreviaturas y \"x\"",
+  "responsable": "Adriana",
+  "prueba": "Formato \"Ocean x6\" para contar, con nombres recortados.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Ocean Bomb",
+        "tipo": "ajuste",
+        "cantidad": 6
+      },
+      {
+        "producto": "CocoPalm Mango",
+        "tipo": "ajuste",
+        "cantidad": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "final-test-10",
+  "codigo": "T10",
+  "titulo": "Uso mayor al stock",
+  "responsable": "Adriana",
+  "prueba": "Que proponga lo dicho aunque supere lo registrado (hay 3) y avise.",
+  "entradas": [
+    {
+      "tipo": "texto",
+      "texto": "vendimos 5 paquetes de mochi bites"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi Bites",
+        "tipo": "uso",
+        "cantidad": 5
+      }
+    ],
+    "nota": "Debe traer un aviso de que supera lo registrado."
+  }
+}

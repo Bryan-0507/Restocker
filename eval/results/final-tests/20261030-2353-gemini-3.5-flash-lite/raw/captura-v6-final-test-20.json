@@ -1,0 +1,93 @@
+{
+  "call": {
+    "latencyMs": 2487,
+    "inputTokens": 5294,
+    "outputTokens": 347,
+    "costUsd": 0.0024557,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": "Vendimos tres pais de queso de pistacho y dos de Nutella.",
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "tres pais de queso de pistacho",
+          "product_mention": "pais de queso de pistacho",
+          "product_id": "p2",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 3,
+          "unit_mentioned": null,
+          "quantity": 3,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "dos de Nutella",
+          "product_mention": "Nutella",
+          "product_id": "p4",
+          "suggested_product_name": null,
+          "type": "uso",
+          "quantity_mentioned": 2,
+          "unit_mentioned": null,
+          "quantity": 2,
+          "review_note": "Inferido del contexto que se refiere a Cheesecake Nutella.",
+          "confidence": "media"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": "Vendimos tres pais de queso de pistacho y dos de Nutella."
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "3021fd2c-6f1d-421b-b3f3-28ee040eddf2",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 3,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "18160256-76dc-471e-9dde-07ad5e4c1fc3",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 2,
+        "confidence": "media",
+        "note": "Inferido del contexto que se refiere a Cheesecake Nutella."
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 2,
+    "predictedItems": 2,
+    "matched": 2,
+    "perfect": 2,
+    "failures": []
+  }
+}

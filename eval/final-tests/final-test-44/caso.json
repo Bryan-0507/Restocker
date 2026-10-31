@@ -1,0 +1,38 @@
+{
+  "id": "final-test-44",
+  "codigo": "M08",
+  "titulo": "Productos fuera del catálogo",
+  "responsable": "Adriana",
+  "prueba": "Proponer los que no existen sin forzarlos a un producto parecido.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    },
+    {
+      "tipo": "texto",
+      "texto": "también 3 galletas de matcha"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochi Vainilla",
+        "tipo": "entrada",
+        "cantidad": 6
+      },
+      {
+        "producto": null,
+        "tipo": "entrada",
+        "cantidad": 10
+      },
+      {
+        "producto": null,
+        "tipo": "entrada",
+        "cantidad": 3
+      }
+    ],
+    "nota": "Brownies (10) y galletas de matcha (3) van sin producto asignado y con nombre sugerido."
+  }
+}

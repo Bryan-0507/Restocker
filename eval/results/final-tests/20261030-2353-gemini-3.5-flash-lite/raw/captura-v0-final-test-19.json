@@ -1,0 +1,50 @@
+{
+  "call": {
+    "latencyMs": 4568,
+    "inputTokens": 308,
+    "outputTokens": 55,
+    "costUsd": 0.00022989999999999998,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p1",
+          "type": "uso",
+          "quantity": 6
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "b241b3b9-bd31-438e-97f9-b10255340b75",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 6,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 0,
+    "perfect": 0,
+    "failures": [
+      "Faltó: Buldak Carbonara, ajuste, 6",
+      "Sobró: Buldak Carbonara, uso, 6"
+    ]
+  }
+}

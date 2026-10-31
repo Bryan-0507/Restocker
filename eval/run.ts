@@ -51,7 +51,9 @@ const AUDIO_TYPES: Record<string, string> = {
 
 type Expected = {
   status: "aceptada" | "rechazada";
-  items?: { producto: string; tipo: string; cantidad: number | null }[];
+  // producto: el nombre del catálogo, null si no existe en el catálogo, o una lista de nombres
+  // válidos cuando el caso es ambiguo a propósito. confianza: si se exige un nivel (p. ej. "baja").
+  items?: { producto: string | null | (string | null)[]; tipo: string; cantidad: number | null; confianza?: string }[];
   rechazos?: { entrada: number; categoria: string }[];
   nota?: string;
 };
@@ -224,16 +226,25 @@ function grade(expected: Expected, decoded: Decoded | null, problem: string | nu
   let matched = 0;
   let perfect = 0;
   for (const want of expectedItems) {
-    const index = predicted.findIndex((item, i) => !used.has(i) && item.name === want.producto && item.type === want.tipo);
+    const names = Array.isArray(want.producto) ? want.producto : [want.producto];
+    const label = Array.isArray(want.producto) ? "un producto ambiguo" : (want.producto ?? "producto fuera del catálogo");
+    const fits = (item: (typeof predicted)[number], i: number) => !used.has(i) && names.includes(item.name) && item.type === want.tipo;
+    // Si dos esperados comparten producto y tipo (p. ej. dos productos fuera del catálogo), se
+    // empareja primero con la propuesta que trae la misma cantidad.
+    let index = predicted.findIndex((item, i) => fits(item, i) && sameQuantity(item.quantity, want.cantidad));
+    if (index === -1) index = predicted.findIndex(fits);
     if (index === -1) {
-      failures.push(`Faltó: ${want.producto}, ${want.tipo}, ${want.cantidad ?? "sin cantidad"}`);
+      failures.push(`Faltó: ${label}, ${want.tipo}, ${want.cantidad ?? "sin cantidad"}`);
       continue;
     }
     used.add(index);
     matched++;
     const got = predicted[index]!;
-    if (sameQuantity(got.quantity, want.cantidad)) perfect++;
-    else failures.push(`Cantidad de ${want.producto}: se esperaba ${want.cantidad ?? "vacía"} y salió ${got.quantity ?? "vacía"}`);
+    const quantityOk = sameQuantity(got.quantity, want.cantidad);
+    const confidenceOk = !want.confianza || got.confidence === want.confianza;
+    if (quantityOk && confidenceOk) perfect++;
+    if (!quantityOk) failures.push(`Cantidad de ${label}: se esperaba ${want.cantidad ?? "vacía"} y salió ${got.quantity ?? "vacía"}`);
+    if (!confidenceOk) failures.push(`Confianza de ${label}: se esperaba ${want.confianza} y salió ${got.confidence ?? "ninguna"}`);
   }
   predicted.forEach((item, i) => {
     if (!used.has(i)) {

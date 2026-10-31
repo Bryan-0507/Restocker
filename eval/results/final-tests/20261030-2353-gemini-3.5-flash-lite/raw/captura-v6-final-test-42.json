@@ -1,0 +1,150 @@
+{
+  "call": {
+    "latencyMs": 3405,
+    "inputTokens": 7248,
+    "outputTokens": 634,
+    "costUsd": 0.0037594,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        },
+        {
+          "input_id": "e2",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "12 Ocean Bomb",
+          "product_mention": "Ocean Bomb",
+          "product_id": "p14",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 12,
+          "unit_mentioned": null,
+          "quantity": 12,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e1",
+          "raw_text": "6 CocoPalm Mango",
+          "product_mention": "CocoPalm Mango",
+          "product_id": "p7",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 6,
+          "unit_mentioned": null,
+          "quantity": 6,
+          "review_note": null,
+          "confidence": "alta"
+        },
+        {
+          "input_id": "e2",
+          "raw_text": "10 Buldack Carbonara",
+          "product_mention": "Buldack Carbonara",
+          "product_id": "p1",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 10,
+          "unit_mentioned": null,
+          "quantity": 10,
+          "review_note": "Ligero error ortográfico en el texto (Buldack vs Buldak), emparejado correctamente.",
+          "confidence": "media"
+        },
+        {
+          "input_id": "e2",
+          "raw_text": "4 mochi bites",
+          "product_mention": "mochi bites",
+          "product_id": "p10",
+          "suggested_product_name": null,
+          "type": "entrada",
+          "quantity_mentioned": 4,
+          "unit_mentioned": null,
+          "quantity": 4,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      },
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "7c76f5c8-1e2c-4586-b65f-5d64f81c6c5f",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 12,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 0,
+        "productId": "ce5a51ea-aa88-4db9-8951-c14ef9a95b84",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 6,
+        "confidence": "alta",
+        "note": null
+      },
+      {
+        "inputIndex": 1,
+        "productId": "b241b3b9-bd31-438e-97f9-b10255340b75",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 10,
+        "confidence": "media",
+        "note": "Ligero error ortográfico en el texto (Buldack vs Buldak), emparejado correctamente."
+      },
+      {
+        "inputIndex": 1,
+        "productId": "3eb5dd3c-036a-4eaa-8308-d1c7bfc6a6c2",
+        "suggested": null,
+        "type": "entrada",
+        "quantity": 4,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 4,
+    "predictedItems": 4,
+    "matched": 4,
+    "perfect": 4,
+    "failures": []
+  }
+}

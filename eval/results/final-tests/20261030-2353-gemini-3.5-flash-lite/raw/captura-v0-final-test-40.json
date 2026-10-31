@@ -1,0 +1,65 @@
+{
+  "call": {
+    "latencyMs": 4791,
+    "inputTokens": 1338,
+    "outputTokens": 97,
+    "costUsd": 0.0006439,
+    "waits": 2,
+    "technical": false,
+    "raw": {
+      "items": [
+        {
+          "input_id": "e1",
+          "product_id": "p7",
+          "type": "uso",
+          "quantity": 3
+        },
+        {
+          "input_id": "e2",
+          "product_id": null,
+          "type": "ajuste",
+          "quantity": null
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "ce5a51ea-aa88-4db9-8951-c14ef9a95b84",
+        "suggested": null,
+        "type": "uso",
+        "quantity": 3,
+        "confidence": null,
+        "note": null
+      },
+      {
+        "inputIndex": 1,
+        "productId": null,
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": null,
+        "confidence": null,
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 1,
+    "expectedItems": 1,
+    "predictedItems": 2,
+    "matched": 1,
+    "perfect": 1,
+    "failures": [
+      "Categoría de la entrada 2: se esperaba sin_relacion y salió ninguna",
+      "Sobró: sin producto (?), ajuste, sin cantidad"
+    ]
+  }
+}

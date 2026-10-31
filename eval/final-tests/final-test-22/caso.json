@@ -1,0 +1,43 @@
+{
+  "id": "final-test-22",
+  "codigo": "A12",
+  "titulo": "Habla rápida con cinco productos",
+  "responsable": "Adriana",
+  "prueba": "Lista larga dicha de corrido.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochis Fresa",
+        "tipo": "uso",
+        "cantidad": 2
+      },
+      {
+        "producto": "Mochi Vainilla",
+        "tipo": "uso",
+        "cantidad": 1
+      },
+      {
+        "producto": "Mochi Arándano",
+        "tipo": "uso",
+        "cantidad": 3
+      },
+      {
+        "producto": "Copa tres chocolates",
+        "tipo": "uso",
+        "cantidad": 2
+      },
+      {
+        "producto": "Cheesecake Mango",
+        "tipo": "uso",
+        "cantidad": 1
+      }
+    ]
+  }
+}

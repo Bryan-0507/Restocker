@@ -1,0 +1,33 @@
+{
+  "id": "final-test-27",
+  "codigo": "F04",
+  "titulo": "Nota en forma de tabla",
+  "responsable": "Bryan",
+  "prueba": "Columnas que definen el tipo de movimiento y celdas vacías.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Mochis Fresa",
+        "tipo": "entrada",
+        "cantidad": 10
+      },
+      {
+        "producto": "Mochis Fresa",
+        "tipo": "uso",
+        "cantidad": 4
+      },
+      {
+        "producto": "CocoPalm Mango",
+        "tipo": "uso",
+        "cantidad": 2
+      }
+    ]
+  }
+}

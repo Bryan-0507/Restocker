@@ -1,0 +1,23 @@
+{
+  "id": "final-test-19",
+  "codigo": "A09",
+  "titulo": "Voz clara de fondo",
+  "responsable": "Adriana",
+  "prueba": "Ignorar una voz de fondo que se entiende (video o TV) y que no reporta nada.",
+  "entradas": [
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp4"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Buldak Carbonara",
+        "tipo": "ajuste",
+        "cantidad": 6
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "final-test-26",
+  "codigo": "F03",
+  "titulo": "Nota con tachón",
+  "responsable": "Bryan",
+  "prueba": "Que tome el número corregido y no el tachado.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Cheesecake Mango",
+        "tipo": "uso",
+        "cantidad": 3
+      }
+    ]
+  }
+}

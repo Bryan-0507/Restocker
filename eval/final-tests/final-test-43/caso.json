@@ -1,0 +1,41 @@
+{
+  "id": "final-test-43",
+  "codigo": "M07",
+  "titulo": "Tres entradas, tres movimientos",
+  "responsable": "Adriana",
+  "prueba": "Cada tipo de entrada aporta un movimiento distinto.",
+  "entradas": [
+    {
+      "tipo": "foto",
+      "archivo": "foto1.png"
+    },
+    {
+      "tipo": "audio",
+      "archivo": "audio.mp3"
+    },
+    {
+      "tipo": "texto",
+      "texto": "se cayó un ajolote"
+    }
+  ],
+  "esperado": {
+    "status": "aceptada",
+    "items": [
+      {
+        "producto": "Copa tres chocolates",
+        "tipo": "uso",
+        "cantidad": 2
+      },
+      {
+        "producto": "Cheesecake Mango",
+        "tipo": "entrada",
+        "cantidad": 10
+      },
+      {
+        "producto": "Chocolate Ajolote",
+        "tipo": "perdida",
+        "cantidad": 1
+      }
+    ]
+  }
+}

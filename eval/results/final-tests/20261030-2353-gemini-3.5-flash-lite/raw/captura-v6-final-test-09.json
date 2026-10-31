@@ -1,0 +1,71 @@
+{
+  "call": {
+    "latencyMs": 1135,
+    "inputTokens": 5098,
+    "outputTokens": 120,
+    "costUsd": 0.0018294,
+    "waits": 0,
+    "technical": false,
+    "raw": {
+      "inputs": [
+        {
+          "input_id": "e1",
+          "transcription": null,
+          "is_relevant": true,
+          "rejection_category": null,
+          "rejection_reason": null
+        }
+      ],
+      "status": "aceptada",
+      "items": [
+        {
+          "input_id": "e1",
+          "raw_text": "ya no hay oro dubai, se acabaron todos",
+          "product_mention": "oro dubai",
+          "product_id": "p6",
+          "suggested_product_name": null,
+          "type": "ajuste",
+          "quantity_mentioned": 0,
+          "unit_mentioned": null,
+          "quantity": 0,
+          "review_note": null,
+          "confidence": "alta"
+        }
+      ]
+    },
+    "problem": null
+  },
+  "decoded": {
+    "status": "aceptada",
+    "inputs": [
+      {
+        "relevant": true,
+        "category": null,
+        "reason": null,
+        "transcription": null
+      }
+    ],
+    "items": [
+      {
+        "inputIndex": 0,
+        "productId": "4f511449-7398-4bbd-bec8-d7bbbc24e761",
+        "suggested": null,
+        "type": "ajuste",
+        "quantity": 0,
+        "confidence": "alta",
+        "note": null
+      }
+    ],
+    "message": null
+  },
+  "grade": {
+    "statusOk": true,
+    "categoriesOk": 0,
+    "categoriesExpected": 0,
+    "expectedItems": 1,
+    "predictedItems": 1,
+    "matched": 1,
+    "perfect": 1,
+    "failures": []
+  }
+}
