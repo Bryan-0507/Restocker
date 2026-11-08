@@ -109,6 +109,7 @@ Para regenerarlos, se corren los notebooks de `notebooks/` en orden con el kerne
 | Notebook | Dataset | Papel |
 | :- | :- | :- |
 | `01_ddop_bakery.ipynb` | Cadena de panaderías alemana (Huber et al., 2019) | Entrenamiento y prueba con locales que el modelo no vio |
+| `02_french_bakery.ipynb` | Panadería francesa (Kaggle, *French Bakery Daily Sales*) | Entrenamiento |
 
 ## Scripts de desarrollo
 
