@@ -5,6 +5,7 @@
       "name": "restocker-dev",
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["dev"],
+      "cwd": "web",
       "port": 3000
     }
   ]

@@ -1,1 +1,1 @@
-pnpm run validate
+cd web && pnpm run validate

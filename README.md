@@ -4,18 +4,25 @@ Restocker registra los movimientos de inventario de un negocio a partir de fotos
 
 Proyecto 3 del curso CC3092 Deep Learning y Sistemas Inteligentes, Universidad del Valle de Guatemala.
 
+## Estructura
+
+| Carpeta | Qué contiene |
+| :- | :- |
+| [`web/`](web) | La aplicación (Next.js y Supabase) y la evaluación del prompt de captura. Todos los comandos `pnpm` de este README se corren desde aquí. |
+| [`docs/`](docs) | Marca, diagramas, video y presentación. |
+
 ## Contenido del repositorio
 
 | Parte | Dónde está |
 | :- | :- |
-| Ingesta y preprocesamiento de entradas | [`compress-image.ts`](src/features/capture/new/utils/compress-image.ts) (fotos a 1600 px y JPEG), [`useAudioRecorder.ts`](src/features/capture/new/hooks/useAudioRecorder.ts) (audio de hasta 90 s) y la ruta [`POST /api/captures`](src/app/api/captures/route.ts) (valida, descarga los archivos y normaliza el audio) |
+| Ingesta y preprocesamiento de entradas | [`compress-image.ts`](web/src/features/capture/new/utils/compress-image.ts) (fotos a 1600 px y JPEG), [`useAudioRecorder.ts`](web/src/features/capture/new/hooks/useAudioRecorder.ts) (audio de hasta 90 s) y la ruta [`POST /api/captures`](web/src/app/api/captures/route.ts) (valida, descarga los archivos y normaliza el audio) |
 | Índice de recuperación | No aplica: el sistema no usa RAG y el catálogo completo va en cada solicitud |
-| Prompt final (captura-v6) | [`capture-prompt.ts`](src/features/capture/shared/llm/capture-prompt.ts), con el esquema de respuesta en [`capture-response-schema.ts`](src/features/capture/shared/llm/capture-response-schema.ts) y la llamada a Gemini en [`capture-model.ts`](src/features/capture/shared/llm/capture-model.ts) |
-| Versiones anteriores del prompt (v0 a v5) | [`eval/prompts/`](eval/prompts) |
-| Aplicación | Next.js en [`src/`](src), con la base de datos, las funciones y los buckets en [`supabase/migrations/`](supabase/migrations) |
-| Conjuntos de evaluación | [`eval/iteration-tests/`](eval/iteration-tests) (10 casos) y [`eval/final-tests/`](eval/final-tests) (50 casos), con el catálogo congelado en [`eval/catalogo.json`](eval/catalogo.json) |
-| Scripts de evaluación | [`eval/run.ts`](eval/run.ts) y [`eval/versions.ts`](eval/versions.ts) |
-| Resultados reportados | [`eval/results/`](eval/results) |
+| Prompt final (captura-v6) | [`capture-prompt.ts`](web/src/features/capture/shared/llm/capture-prompt.ts), con el esquema de respuesta en [`capture-response-schema.ts`](web/src/features/capture/shared/llm/capture-response-schema.ts) y la llamada a Gemini en [`capture-model.ts`](web/src/features/capture/shared/llm/capture-model.ts) |
+| Versiones anteriores del prompt (v0 a v5) | [`eval/prompts/`](web/eval/prompts) |
+| Aplicación | Next.js en [`web/src/`](web/src), con la base de datos, las funciones y los buckets en [`supabase/migrations/`](web/supabase/migrations) |
+| Conjuntos de evaluación | [`eval/iteration-tests/`](web/eval/iteration-tests) (10 casos) y [`eval/final-tests/`](web/eval/final-tests) (50 casos), con el catálogo congelado en [`eval/catalogo.json`](web/eval/catalogo.json) |
+| Scripts de evaluación | [`eval/run.ts`](web/eval/run.ts) y [`eval/versions.ts`](web/eval/versions.ts) |
+| Resultados reportados | [`eval/results/`](web/eval/results) |
 
 Cada caso de evaluación es una carpeta con `caso.json` (entradas y resultado esperado) y sus archivos de foto o audio.
 
@@ -29,11 +36,12 @@ Cada caso de evaluación es una carpeta con `caso.json` (entradas y resultado es
 ## Instalación
 
 ```bash
+cd web
 pnpm install
 cp .env.example .env
 ```
 
-Llena `.env` con tus valores. Las llaves nunca se suben al repositorio: `.env` está en `.gitignore` y solo se versiona `.env.example`.
+Llena `web/.env` con tus valores. Las llaves nunca se suben al repositorio: `.env` está en `.gitignore` y solo se versiona `.env.example`.
 
 | Variable | Para qué |
 | :- | :- |
@@ -71,12 +79,12 @@ pnpm eval --set iteration-tests --model gemini-3.5-flash-lite
 pnpm eval --set final-tests --versions v0,v6 --model gemini-3.5-flash-lite
 ```
 
-Cada corrida crea `eval/results/<set>/<fecha>-<modelo>/` con:
+Cada corrida crea `web/eval/results/<set>/<fecha>-<modelo>/` con:
 
 - `resumen.md`: estado correcto, categoría de rechazo, precisión, recall, formato inválido, errores técnicos, latencia p50 y p95 y costo total por versión, más la lista de fallas;
 - `raw/`: la respuesta de cada caso con su latencia, tokens, costo y calificación.
 
-El F1 se calcula a partir de la precisión y el recall, y los promedios de latencia y tokens de la Tabla 1 del informe salen de los archivos de `raw/`. Las corridas reportadas están en `eval/results/iteration-tests/20261030-2131-gemini-3.5-flash-lite/` y `eval/results/final-tests/20261030-2353-gemini-3.5-flash-lite/`.
+El F1 se calcula a partir de la precisión y el recall, y los promedios de latencia y tokens de la Tabla 1 del informe salen de los archivos de `raw/`. Las corridas reportadas están en `web/eval/results/iteration-tests/20261030-2131-gemini-3.5-flash-lite/` y `web/eval/results/final-tests/20261030-2353-gemini-3.5-flash-lite/`.
 
 Opciones del script: `--set`, `--versions` (por ejemplo `v5,v6`), `--model`, `--cases` (casos específicos) y `--concurrency` (3 por defecto). Como el modelo no es determinista, una nueva corrida puede variar en algún caso respecto a lo reportado.
 

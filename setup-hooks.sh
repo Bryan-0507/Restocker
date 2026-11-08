@@ -5,6 +5,9 @@
 
 set -e  # Exit on error
 
+# The hooks live at the repo root; the web app (and husky) lives in web/
+cd "$(dirname "$0")"
+
 echo "🚀 Setting up Git hooks with Husky..."
 
 # Check if we're in a git repository
@@ -14,25 +17,25 @@ if [ ! -d ".git" ]; then
 fi
 
 # Check if node_modules exists
-if [ ! -d "node_modules" ]; then
+if [ ! -d "web/node_modules" ]; then
   echo "📦 Installing dependencies first..."
-  pnpm install
+  (cd web && pnpm install)
 fi
 
 # Configure git to use .husky/ as the hooks directory
 echo "⚙️  Configuring Husky..."
-pnpm exec husky
+web/node_modules/.bin/husky
 
 # Create/update pre-commit hook
 echo "📝 Setting up pre-commit hook..."
 cat > .husky/pre-commit << 'EOF'
-pnpm run validate
+cd web && pnpm run validate
 EOF
 
 # Create/update commit-msg hook
 echo "📝 Setting up commit-msg hook..."
 cat > .husky/commit-msg << 'EOF'
-pnpm exec commitlint --edit "$1"
+cd web && pnpm exec commitlint --edit "$1"
 EOF
 
 # Make hooks executable

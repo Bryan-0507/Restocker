@@ -1,0 +1,10 @@
+# Entorno: Python 3.12 (compatible con PyTorch y con Colab/Kaggle)
+# uv venv --python 3.12 .venv && uv pip install --python .venv -r requirements.txt
+
+# Análisis exploratorio y preprocesamiento
+pandas==3.1.1
+numpy==2.5.4
+matplotlib==3.11.2
+pyarrow==26.0.1
+requests==2.34.2
+jupyter==1.1.1
