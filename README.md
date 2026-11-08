@@ -9,6 +9,7 @@ Proyecto 3 del curso CC3092 Deep Learning y Sistemas Inteligentes, Universidad d
 | Carpeta | Qué contiene |
 | :- | :- |
 | [`web/`](web) | La aplicación (Next.js y Supabase) y la evaluación del prompt de captura. Todos los comandos `pnpm` de este README se corren desde aquí. |
+| [`forecasting/`](forecasting) | Módulo de pronóstico de demanda del proyecto final: análisis exploratorio, preprocesamiento y entrenamiento. Ver [Pronóstico de demanda](#pronóstico-de-demanda). |
 | [`docs/`](docs) | Marca, diagramas, video y presentación. |
 
 ## Contenido del repositorio
@@ -87,6 +88,27 @@ Cada corrida crea `web/eval/results/<set>/<fecha>-<modelo>/` con:
 El F1 se calcula a partir de la precisión y el recall, y los promedios de latencia y tokens de la Tabla 1 del informe salen de los archivos de `raw/`. Las corridas reportadas están en `web/eval/results/iteration-tests/20261030-2131-gemini-3.5-flash-lite/` y `web/eval/results/final-tests/20261030-2353-gemini-3.5-flash-lite/`.
 
 Opciones del script: `--set`, `--versions` (por ejemplo `v5,v6`), `--model`, `--cases` (casos específicos) y `--concurrency` (3 por defecto). Como el modelo no es determinista, una nueva corrida puede variar en algún caso respecto a lo reportado.
+
+## Pronóstico de demanda
+
+El módulo de pronóstico vive en `forecasting/` y usa Python 3.12. Para crear el entorno:
+
+```bash
+cd forecasting
+uv venv --python 3.12 .venv
+uv pip install --python .venv -r requirements.txt
+```
+
+Los datasets ya vienen en el repositorio, así que no hace falta descargarlos:
+
+- `data/raw/`: los datasets originales, tal como se obtuvieron de su fuente.
+- `data/processed/`: cada dataset limpio y llevado al formato común (una fila por local, producto y día).
+
+Para regenerarlos, se corren los notebooks de `notebooks/` en orden con el kernel de `.venv`. Cada uno descarga su dataset si no está en `data/raw/`, lo analiza y guarda el resultado en `data/processed/`.
+
+| Notebook | Dataset | Papel |
+| :- | :- | :- |
+| `01_ddop_bakery.ipynb` | Cadena de panaderías alemana (Huber et al., 2019) | Entrenamiento y prueba con locales que el modelo no vio |
 
 ## Scripts de desarrollo
 

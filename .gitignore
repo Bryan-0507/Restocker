@@ -50,6 +50,3 @@ next-env.d.ts
 .venv/
 __pycache__/
 .ipynb_checkpoints/
-
-# datos originales: cada notebook los descarga de su fuente
-/forecasting/data/raw/
